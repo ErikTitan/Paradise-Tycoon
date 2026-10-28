@@ -1,0 +1,831 @@
+{
+  "name": "Paradise Tycoon – turista, chôdza",
+  "version": 1,
+  "art_generation": "Built-in image_gen",
+  "status": "Prototype animation; visually reviewed, not tested in a game engine.",
+  "atlas": "Atlas/walk_atlas_8x8.png",
+  "atlas_size": {
+    "width": 2048,
+    "height": 2048
+  },
+  "frame_size": {
+    "width": 256,
+    "height": 256
+  },
+  "row_order": [
+    "N",
+    "NE",
+    "E",
+    "SE",
+    "S",
+    "SW",
+    "W",
+    "NW"
+  ],
+  "frame_order": "Left to right, 0–7",
+  "fps": 10,
+  "cycle_duration_seconds": 0.8,
+  "origin_px_from_top_left": {
+    "x": 128,
+    "y": 234
+  },
+  "pivot_normalized_from_bottom_left": {
+    "x": 0.5,
+    "y": 0.0859375
+  },
+  "motion": "in_place",
+  "clips": {
+    "N": {
+      "label_sk": "Hore",
+      "screen_vector": [
+        0,
+        -1
+      ],
+      "loop": true,
+      "fps": 10,
+      "frames": [
+        {
+          "index": 0,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/N/walk_N_00.png"
+        },
+        {
+          "index": 1,
+          "rect": {
+            "x": 256,
+            "y": 0,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/N/walk_N_01.png"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 512,
+            "y": 0,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/N/walk_N_02.png"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 768,
+            "y": 0,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/N/walk_N_03.png"
+        },
+        {
+          "index": 4,
+          "rect": {
+            "x": 1024,
+            "y": 0,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/N/walk_N_04.png"
+        },
+        {
+          "index": 5,
+          "rect": {
+            "x": 1280,
+            "y": 0,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/N/walk_N_05.png"
+        },
+        {
+          "index": 6,
+          "rect": {
+            "x": 1536,
+            "y": 0,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/N/walk_N_06.png"
+        },
+        {
+          "index": 7,
+          "rect": {
+            "x": 1792,
+            "y": 0,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/N/walk_N_07.png"
+        }
+      ]
+    },
+    "NE": {
+      "label_sk": "Vpravo hore",
+      "screen_vector": [
+        1,
+        -1
+      ],
+      "loop": true,
+      "fps": 10,
+      "frames": [
+        {
+          "index": 0,
+          "rect": {
+            "x": 0,
+            "y": 256,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NE/walk_NE_00.png"
+        },
+        {
+          "index": 1,
+          "rect": {
+            "x": 256,
+            "y": 256,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NE/walk_NE_01.png"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 512,
+            "y": 256,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NE/walk_NE_02.png"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 768,
+            "y": 256,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NE/walk_NE_03.png"
+        },
+        {
+          "index": 4,
+          "rect": {
+            "x": 1024,
+            "y": 256,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NE/walk_NE_04.png"
+        },
+        {
+          "index": 5,
+          "rect": {
+            "x": 1280,
+            "y": 256,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NE/walk_NE_05.png"
+        },
+        {
+          "index": 6,
+          "rect": {
+            "x": 1536,
+            "y": 256,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NE/walk_NE_06.png"
+        },
+        {
+          "index": 7,
+          "rect": {
+            "x": 1792,
+            "y": 256,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NE/walk_NE_07.png"
+        }
+      ]
+    },
+    "E": {
+      "label_sk": "Vpravo",
+      "screen_vector": [
+        1,
+        0
+      ],
+      "loop": true,
+      "fps": 10,
+      "frames": [
+        {
+          "index": 0,
+          "rect": {
+            "x": 0,
+            "y": 512,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/E/walk_E_00.png"
+        },
+        {
+          "index": 1,
+          "rect": {
+            "x": 256,
+            "y": 512,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/E/walk_E_01.png"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 512,
+            "y": 512,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/E/walk_E_02.png"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 768,
+            "y": 512,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/E/walk_E_03.png"
+        },
+        {
+          "index": 4,
+          "rect": {
+            "x": 1024,
+            "y": 512,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/E/walk_E_04.png"
+        },
+        {
+          "index": 5,
+          "rect": {
+            "x": 1280,
+            "y": 512,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/E/walk_E_05.png"
+        },
+        {
+          "index": 6,
+          "rect": {
+            "x": 1536,
+            "y": 512,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/E/walk_E_06.png"
+        },
+        {
+          "index": 7,
+          "rect": {
+            "x": 1792,
+            "y": 512,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/E/walk_E_07.png"
+        }
+      ]
+    },
+    "SE": {
+      "label_sk": "Vpravo dole",
+      "screen_vector": [
+        1,
+        1
+      ],
+      "loop": true,
+      "fps": 10,
+      "frames": [
+        {
+          "index": 0,
+          "rect": {
+            "x": 0,
+            "y": 768,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SE/walk_SE_00.png"
+        },
+        {
+          "index": 1,
+          "rect": {
+            "x": 256,
+            "y": 768,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SE/walk_SE_01.png"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 512,
+            "y": 768,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SE/walk_SE_02.png"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 768,
+            "y": 768,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SE/walk_SE_03.png"
+        },
+        {
+          "index": 4,
+          "rect": {
+            "x": 1024,
+            "y": 768,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SE/walk_SE_04.png"
+        },
+        {
+          "index": 5,
+          "rect": {
+            "x": 1280,
+            "y": 768,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SE/walk_SE_05.png"
+        },
+        {
+          "index": 6,
+          "rect": {
+            "x": 1536,
+            "y": 768,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SE/walk_SE_06.png"
+        },
+        {
+          "index": 7,
+          "rect": {
+            "x": 1792,
+            "y": 768,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SE/walk_SE_07.png"
+        }
+      ]
+    },
+    "S": {
+      "label_sk": "Dole",
+      "screen_vector": [
+        0,
+        1
+      ],
+      "loop": true,
+      "fps": 10,
+      "frames": [
+        {
+          "index": 0,
+          "rect": {
+            "x": 0,
+            "y": 1024,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/S/walk_S_00.png"
+        },
+        {
+          "index": 1,
+          "rect": {
+            "x": 256,
+            "y": 1024,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/S/walk_S_01.png"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 512,
+            "y": 1024,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/S/walk_S_02.png"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 768,
+            "y": 1024,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/S/walk_S_03.png"
+        },
+        {
+          "index": 4,
+          "rect": {
+            "x": 1024,
+            "y": 1024,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/S/walk_S_04.png"
+        },
+        {
+          "index": 5,
+          "rect": {
+            "x": 1280,
+            "y": 1024,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/S/walk_S_05.png"
+        },
+        {
+          "index": 6,
+          "rect": {
+            "x": 1536,
+            "y": 1024,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/S/walk_S_06.png"
+        },
+        {
+          "index": 7,
+          "rect": {
+            "x": 1792,
+            "y": 1024,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/S/walk_S_07.png"
+        }
+      ]
+    },
+    "SW": {
+      "label_sk": "Vľavo dole",
+      "screen_vector": [
+        -1,
+        1
+      ],
+      "loop": true,
+      "fps": 10,
+      "frames": [
+        {
+          "index": 0,
+          "rect": {
+            "x": 0,
+            "y": 1280,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SW/walk_SW_00.png"
+        },
+        {
+          "index": 1,
+          "rect": {
+            "x": 256,
+            "y": 1280,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SW/walk_SW_01.png"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 512,
+            "y": 1280,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SW/walk_SW_02.png"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 768,
+            "y": 1280,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SW/walk_SW_03.png"
+        },
+        {
+          "index": 4,
+          "rect": {
+            "x": 1024,
+            "y": 1280,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SW/walk_SW_04.png"
+        },
+        {
+          "index": 5,
+          "rect": {
+            "x": 1280,
+            "y": 1280,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SW/walk_SW_05.png"
+        },
+        {
+          "index": 6,
+          "rect": {
+            "x": 1536,
+            "y": 1280,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SW/walk_SW_06.png"
+        },
+        {
+          "index": 7,
+          "rect": {
+            "x": 1792,
+            "y": 1280,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/SW/walk_SW_07.png"
+        }
+      ]
+    },
+    "W": {
+      "label_sk": "Vľavo",
+      "screen_vector": [
+        -1,
+        0
+      ],
+      "loop": true,
+      "fps": 10,
+      "frames": [
+        {
+          "index": 0,
+          "rect": {
+            "x": 0,
+            "y": 1536,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/W/walk_W_00.png"
+        },
+        {
+          "index": 1,
+          "rect": {
+            "x": 256,
+            "y": 1536,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/W/walk_W_01.png"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 512,
+            "y": 1536,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/W/walk_W_02.png"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 768,
+            "y": 1536,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/W/walk_W_03.png"
+        },
+        {
+          "index": 4,
+          "rect": {
+            "x": 1024,
+            "y": 1536,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/W/walk_W_04.png"
+        },
+        {
+          "index": 5,
+          "rect": {
+            "x": 1280,
+            "y": 1536,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/W/walk_W_05.png"
+        },
+        {
+          "index": 6,
+          "rect": {
+            "x": 1536,
+            "y": 1536,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/W/walk_W_06.png"
+        },
+        {
+          "index": 7,
+          "rect": {
+            "x": 1792,
+            "y": 1536,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/W/walk_W_07.png"
+        }
+      ]
+    },
+    "NW": {
+      "label_sk": "Vľavo hore",
+      "screen_vector": [
+        -1,
+        -1
+      ],
+      "loop": true,
+      "fps": 10,
+      "frames": [
+        {
+          "index": 0,
+          "rect": {
+            "x": 0,
+            "y": 1792,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NW/walk_NW_00.png"
+        },
+        {
+          "index": 1,
+          "rect": {
+            "x": 256,
+            "y": 1792,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NW/walk_NW_01.png"
+        },
+        {
+          "index": 2,
+          "rect": {
+            "x": 512,
+            "y": 1792,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NW/walk_NW_02.png"
+        },
+        {
+          "index": 3,
+          "rect": {
+            "x": 768,
+            "y": 1792,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NW/walk_NW_03.png"
+        },
+        {
+          "index": 4,
+          "rect": {
+            "x": 1024,
+            "y": 1792,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NW/walk_NW_04.png"
+        },
+        {
+          "index": 5,
+          "rect": {
+            "x": 1280,
+            "y": 1792,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NW/walk_NW_05.png"
+        },
+        {
+          "index": 6,
+          "rect": {
+            "x": 1536,
+            "y": 1792,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NW/walk_NW_06.png"
+        },
+        {
+          "index": 7,
+          "rect": {
+            "x": 1792,
+            "y": 1792,
+            "w": 256,
+            "h": 256
+          },
+          "duration_ms": 100,
+          "file": "Frames/NW/walk_NW_07.png"
+        }
+      ]
+    }
+  }
+}

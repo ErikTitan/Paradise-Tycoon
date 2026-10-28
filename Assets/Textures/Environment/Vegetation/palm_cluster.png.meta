@@ -1,0 +1,964 @@
+fileFormatVersion: 2
+guid: bdda5d5896152844d8a31217961943fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4183888191946224042
+    second: palm_cluster_0
+  - first:
+      213: -250471383526240141
+    second: palm_cluster_1
+  - first:
+      213: 1995872589679855443
+    second: palm_cluster_2
+  - first:
+      213: -8582899995841956944
+    second: palm_cluster_3
+  - first:
+      213: -8656181886570119757
+    second: palm_cluster_4
+  - first:
+      213: 7960128551955070789
+    second: palm_cluster_5
+  - first:
+      213: -4532012384146000789
+    second: palm_cluster_6
+  - first:
+      213: 1434980441651410793
+    second: palm_cluster_7
+  - first:
+      213: -4140962740753988948
+    second: palm_cluster_8
+  - first:
+      213: -4560486836738000553
+    second: palm_cluster_9
+  - first:
+      213: 6222119438386391722
+    second: palm_cluster_10
+  - first:
+      213: -1280425276892750022
+    second: palm_cluster_11
+  - first:
+      213: 1688005707756848979
+    second: palm_cluster_12
+  - first:
+      213: -8243525327656590456
+    second: palm_cluster_13
+  - first:
+      213: 1666721449063142036
+    second: palm_cluster_14
+  - first:
+      213: -6299335999657973357
+    second: palm_cluster_15
+  - first:
+      213: 3772112546801969610
+    second: palm_cluster_16
+  - first:
+      213: -719781933289807218
+    second: palm_cluster_17
+  - first:
+      213: -8591815062658501556
+    second: palm_cluster_18
+  - first:
+      213: 8303013289516212727
+    second: palm_cluster_19
+  - first:
+      213: 3401251244768383190
+    second: palm_cluster_20
+  - first:
+      213: 7689358573159556442
+    second: palm_cluster_21
+  - first:
+      213: -2047479572308360876
+    second: palm_cluster_22
+  - first:
+      213: -7161514212942209039
+    second: palm_cluster_23
+  - first:
+      213: -1719052407035508894
+    second: palm_cluster_24
+  - first:
+      213: -2771535261308988792
+    second: palm_cluster_25
+  - first:
+      213: 1497252058902641306
+    second: palm_cluster_26
+  - first:
+      213: 7864080236778340482
+    second: palm_cluster_27
+  - first:
+      213: 2717421166792415581
+    second: palm_cluster_28
+  - first:
+      213: -4410277579300512780
+    second: palm_cluster_29
+  - first:
+      213: -8229588097651545256
+    second: palm_cluster_30
+  - first:
+      213: -7647999222376237650
+    second: palm_cluster_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: palm_cluster_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1235
+        height: 1239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e081b4bd7dfe5c0800000000000000
+      internalID: -4183888191946224042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1148
+        width: 66
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 370948e8a95268cf0800000000000000
+      internalID: -250471383526240141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 933
+        width: 79
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3578ec4bb83c2bb10800000000000000
+      internalID: 1995872589679855443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 958
+        width: 6
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3732d8de963e880800000000000000
+      internalID: -8582899995841956944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_4
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 929
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd31d3cf601fd780800000000000000
+      internalID: -8656181886570119757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 953
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ff9b15ebe087e60800000000000000
+      internalID: 7960128551955070789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 927
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b647e4d8fbe0b11c0800000000000000
+      internalID: -4532012384146000789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_7
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 902
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 967f34cdb131ae310800000000000000
+      internalID: 1434980441651410793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_8
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 901
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca20b39b3585886c0800000000000000
+      internalID: -4140962740753988948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 748
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759f26d6265e5b0c0800000000000000
+      internalID: -4560486836738000553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_10
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 753
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaae21bb9a8695650800000000000000
+      internalID: 6222119438386391722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_11
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 763
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f5061aef30b3ee0800000000000000
+      internalID: -1280425276892750022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_12
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 763
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 357cdad6f300d6710800000000000000
+      internalID: 1688005707756848979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 713
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883e71cf36d199d80800000000000000
+      internalID: -8243525327656590456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_14
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 626
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492dee6c352612710800000000000000
+      internalID: 1666721449063142036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_15
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 602
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3996e8b98434498a0800000000000000
+      internalID: -6299335999657973357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_16
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 561
+        width: 35
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac9ece4306c395430800000000000000
+      internalID: 3772112546801969610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_17
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 524
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e82648e2522d206f0800000000000000
+      internalID: -719781933289807218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_18
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 505
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44b36ec8bdb3c880800000000000000
+      internalID: -8591815062658501556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_19
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 312
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f126f6789a3a3370800000000000000
+      internalID: 8303013289516212727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_20
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 290
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0564c8cfba33f20800000000000000
+      internalID: 3401251244768383190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 283
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55a7cfd1e616ba60800000000000000
+      internalID: 7689358573159556442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_22
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 238
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45101bf4d24e593e0800000000000000
+      internalID: -2047479572308360876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_23
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 260
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff1ba344c03d9c90800000000000000
+      internalID: -7161514212942209039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_24
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 245
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2674e5891f2b428e0800000000000000
+      internalID: -1719052407035508894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 186
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88255333d578989d0800000000000000
+      internalID: -2771535261308988792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 176
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a3d1690de47c410800000000000000
+      internalID: 1497252058902641306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_27
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 165
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280c7564f43d22d60800000000000000
+      internalID: 7864080236778340482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_28
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 63
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d591ac7572836b520800000000000000
+      internalID: 2717421166792415581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_29
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 15
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb5ce488eb8bc2c0800000000000000
+      internalID: -4410277579300512780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_30
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 7
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b62b73a31aacd80800000000000000
+      internalID: -8229588097651545256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_cluster_31
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 13
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea5fcc36a39dcd590800000000000000
+      internalID: -7647999222376237650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      palm_cluster_0: -4183888191946224042
+      palm_cluster_1: -250471383526240141
+      palm_cluster_10: 6222119438386391722
+      palm_cluster_11: -1280425276892750022
+      palm_cluster_12: 1688005707756848979
+      palm_cluster_13: -8243525327656590456
+      palm_cluster_14: 1666721449063142036
+      palm_cluster_15: -6299335999657973357
+      palm_cluster_16: 3772112546801969610
+      palm_cluster_17: -719781933289807218
+      palm_cluster_18: -8591815062658501556
+      palm_cluster_19: 8303013289516212727
+      palm_cluster_2: 1995872589679855443
+      palm_cluster_20: 3401251244768383190
+      palm_cluster_21: 7689358573159556442
+      palm_cluster_22: -2047479572308360876
+      palm_cluster_23: -7161514212942209039
+      palm_cluster_24: -1719052407035508894
+      palm_cluster_25: -2771535261308988792
+      palm_cluster_26: 1497252058902641306
+      palm_cluster_27: 7864080236778340482
+      palm_cluster_28: 2717421166792415581
+      palm_cluster_29: -4410277579300512780
+      palm_cluster_3: -8582899995841956944
+      palm_cluster_30: -8229588097651545256
+      palm_cluster_31: -7647999222376237650
+      palm_cluster_4: -8656181886570119757
+      palm_cluster_5: 7960128551955070789
+      palm_cluster_6: -4532012384146000789
+      palm_cluster_7: 1434980441651410793
+      palm_cluster_8: -4140962740753988948
+      palm_cluster_9: -4560486836738000553
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
