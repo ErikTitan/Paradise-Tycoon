@@ -1,0 +1,1796 @@
+fileFormatVersion: 2
+guid: d30500e6f8604a74fbf8dd4f4fdf76a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1656953567923705697
+    second: walk_atlas_8x8_0
+  - first:
+      213: 578305321892749188
+    second: walk_atlas_8x8_1
+  - first:
+      213: 5696584662861287367
+    second: walk_atlas_8x8_2
+  - first:
+      213: -3287577348751007227
+    second: walk_atlas_8x8_3
+  - first:
+      213: 7241993066543027214
+    second: walk_atlas_8x8_4
+  - first:
+      213: 2781489684799705473
+    second: walk_atlas_8x8_5
+  - first:
+      213: 4240185635863427646
+    second: walk_atlas_8x8_6
+  - first:
+      213: 6290029024877731278
+    second: walk_atlas_8x8_7
+  - first:
+      213: 6103758022800836567
+    second: walk_atlas_8x8_8
+  - first:
+      213: -1695199845651017562
+    second: walk_atlas_8x8_9
+  - first:
+      213: 6553678008475466655
+    second: walk_atlas_8x8_10
+  - first:
+      213: -6878742938490903621
+    second: walk_atlas_8x8_11
+  - first:
+      213: 3976175328018539834
+    second: walk_atlas_8x8_12
+  - first:
+      213: 1679304538984601970
+    second: walk_atlas_8x8_13
+  - first:
+      213: -1178413569498442343
+    second: walk_atlas_8x8_14
+  - first:
+      213: -275388379171354711
+    second: walk_atlas_8x8_15
+  - first:
+      213: 4826447936449053083
+    second: walk_atlas_8x8_16
+  - first:
+      213: 3829590448473684460
+    second: walk_atlas_8x8_17
+  - first:
+      213: -4168011606455370944
+    second: walk_atlas_8x8_18
+  - first:
+      213: 5578302411981038989
+    second: walk_atlas_8x8_19
+  - first:
+      213: 3102747022739353465
+    second: walk_atlas_8x8_20
+  - first:
+      213: 5058431007498944599
+    second: walk_atlas_8x8_21
+  - first:
+      213: 1014600514887923469
+    second: walk_atlas_8x8_22
+  - first:
+      213: 2179812153101167375
+    second: walk_atlas_8x8_23
+  - first:
+      213: 3628033297290267695
+    second: walk_atlas_8x8_24
+  - first:
+      213: 344762897576296890
+    second: walk_atlas_8x8_25
+  - first:
+      213: 1202106641088606129
+    second: walk_atlas_8x8_26
+  - first:
+      213: 4352264048741133480
+    second: walk_atlas_8x8_27
+  - first:
+      213: 1928629017530563216
+    second: walk_atlas_8x8_28
+  - first:
+      213: 6290947428414982906
+    second: walk_atlas_8x8_29
+  - first:
+      213: -318321757834684922
+    second: walk_atlas_8x8_30
+  - first:
+      213: -6749416022000785293
+    second: walk_atlas_8x8_31
+  - first:
+      213: 8358719268544108804
+    second: walk_atlas_8x8_32
+  - first:
+      213: -8998281223132875208
+    second: walk_atlas_8x8_33
+  - first:
+      213: 1518238307952647832
+    second: walk_atlas_8x8_34
+  - first:
+      213: -7152203103809976137
+    second: walk_atlas_8x8_35
+  - first:
+      213: 5922521687398010176
+    second: walk_atlas_8x8_36
+  - first:
+      213: 3348031311253227207
+    second: walk_atlas_8x8_37
+  - first:
+      213: 2931497223646020082
+    second: walk_atlas_8x8_38
+  - first:
+      213: -3107812767725026411
+    second: walk_atlas_8x8_39
+  - first:
+      213: 792977558340952218
+    second: walk_atlas_8x8_40
+  - first:
+      213: -7956320873774079955
+    second: walk_atlas_8x8_41
+  - first:
+      213: 587334635661708710
+    second: walk_atlas_8x8_42
+  - first:
+      213: -8062113781092398928
+    second: walk_atlas_8x8_43
+  - first:
+      213: -3653707809372552204
+    second: walk_atlas_8x8_44
+  - first:
+      213: -2270253526401812160
+    second: walk_atlas_8x8_45
+  - first:
+      213: -4091137419311522344
+    second: walk_atlas_8x8_46
+  - first:
+      213: 2349214893864345717
+    second: walk_atlas_8x8_47
+  - first:
+      213: -494019259326741620
+    second: walk_atlas_8x8_48
+  - first:
+      213: -7196237074797257233
+    second: walk_atlas_8x8_49
+  - first:
+      213: 3211809400091105166
+    second: walk_atlas_8x8_50
+  - first:
+      213: 1739267553900764571
+    second: walk_atlas_8x8_51
+  - first:
+      213: 4613976148285162054
+    second: walk_atlas_8x8_52
+  - first:
+      213: 8366937096260782920
+    second: walk_atlas_8x8_53
+  - first:
+      213: -6296857744337846083
+    second: walk_atlas_8x8_54
+  - first:
+      213: -3224663752901788676
+    second: walk_atlas_8x8_55
+  - first:
+      213: 6572773376651437377
+    second: walk_atlas_8x8_56
+  - first:
+      213: -1022842046917268481
+    second: walk_atlas_8x8_57
+  - first:
+      213: 2588960280002953038
+    second: walk_atlas_8x8_58
+  - first:
+      213: -7596624316092423621
+    second: walk_atlas_8x8_59
+  - first:
+      213: 8426982886331024432
+    second: walk_atlas_8x8_60
+  - first:
+      213: 1548401522827143027
+    second: walk_atlas_8x8_61
+  - first:
+      213: -5441836818966262732
+    second: walk_atlas_8x8_62
+  - first:
+      213: 8615101308362869318
+    second: walk_atlas_8x8_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: walk_atlas_8x8_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1813
+        width: 103
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98679642815109e0800000000000000
+      internalID: -1656953567923705697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_1
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1813
+        width: 102
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f922350ad860800800000000000000
+      internalID: 578305321892749188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_2
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 1813
+        width: 100
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf09cea1955e0f40800000000000000
+      internalID: 5696584662861287367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_3
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 1813
+        width: 100
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5026314d1dd2062d0800000000000000
+      internalID: -3287577348751007227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_4
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 1813
+        width: 105
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e049325035ab08460800000000000000
+      internalID: 7241993066543027214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_5
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 1813
+        width: 103
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18156e0a126d99620800000000000000
+      internalID: 2781489684799705473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_6
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 1813
+        width: 107
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a7a5fce5a28da30800000000000000
+      internalID: 4240185635863427646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_7
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 1813
+        width: 102
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecddbb6721caa4750800000000000000
+      internalID: 6290029024877731278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1557
+        width: 120
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d70cf72597e4b450800000000000000
+      internalID: 6103758022800836567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_9
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 1557
+        width: 108
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a09ca0d8b07978e0800000000000000
+      internalID: -1695199845651017562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_10
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 1557
+        width: 103
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b38730d6753fa50800000000000000
+      internalID: 6553678008475466655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_11
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 1557
+        width: 117
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3e50a1ebbc980a0800000000000000
+      internalID: -6878742938490903621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_12
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 1557
+        width: 124
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35a737e4663e2730800000000000000
+      internalID: 3976175328018539834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_13
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 1557
+        width: 122
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 279d0e3b4961e4710800000000000000
+      internalID: 1679304538984601970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_14
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1557
+        width: 102
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9959b8f1a1f65afe0800000000000000
+      internalID: -1178413569498442343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_15
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1557
+        width: 126
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a7883c6abf9d2cf0800000000000000
+      internalID: -275388379171354711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_16
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1301
+        width: 129
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9186fa93dcfaf240800000000000000
+      internalID: 4826447936449053083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_17
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1301
+        width: 100
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9b08c0930752530800000000000000
+      internalID: 3829590448473684460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_18
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1301
+        width: 131
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04bb589e68f3826c0800000000000000
+      internalID: -4168011606455370944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_19
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1301
+        width: 135
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85a5d31d7c1a6d40800000000000000
+      internalID: 5578302411981038989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_20
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1301
+        width: 100
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97fa7466afb2f0b20800000000000000
+      internalID: 3102747022739353465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_21
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 1301
+        width: 93
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750cbca5338233640800000000000000
+      internalID: 5058431007498944599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_22
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 1301
+        width: 143
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07b2deeac5941e00800000000000000
+      internalID: 1014600514887923469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_23
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 1301
+        width: 133
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0baca6aa9f304e10800000000000000
+      internalID: 2179812153101167375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_24
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1045
+        width: 142
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2c864ecf0d595230800000000000000
+      internalID: 3628033297290267695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_25
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1045
+        width: 120
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab105c95708d8c400800000000000000
+      internalID: 344762897576296890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_26
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 1045
+        width: 107
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf693cfe9dbea010800000000000000
+      internalID: 1202106641088606129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_27
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1045
+        width: 132
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac2be1d719566c30800000000000000
+      internalID: 4352264048741133480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_28
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 1045
+        width: 144
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a7b658fddd3ca10800000000000000
+      internalID: 1928629017530563216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_29
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 1045
+        width: 132
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa0553fa5fed4750800000000000000
+      internalID: 6290947428414982906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_30
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1045
+        width: 108
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6065cfb3c08159bf0800000000000000
+      internalID: -318321757834684922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_31
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1045
+        width: 137
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378205f43e14552a0800000000000000
+      internalID: -6749416022000785293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_32
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 789
+        width: 103
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409d8ca63e2200470800000000000000
+      internalID: 8358719268544108804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_33
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 789
+        width: 103
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 836f81a07eeaf1380800000000000000
+      internalID: -8998281223132875208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_34
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 789
+        width: 101
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e58e572bdd11510800000000000000
+      internalID: 1518238307952647832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_35
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 789
+        width: 101
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8c5fbcb254ebc90800000000000000
+      internalID: -7152203103809976137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_36
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 789
+        width: 102
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04dc7e78816013250800000000000000
+      internalID: 5922521687398010176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_37
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 789
+        width: 104
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6422c2db8967e20800000000000000
+      internalID: 3348031311253227207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_38
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 789
+        width: 102
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f107737135cea820800000000000000
+      internalID: 2931497223646020082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_39
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 789
+        width: 101
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593835fe0c4ded4d0800000000000000
+      internalID: -3107812767725026411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_40
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 533
+        width: 129
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a90e4cf43e8310b00800000000000000
+      internalID: 792977558340952218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_41
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 533
+        width: 125
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20aba7d158759190800000000000000
+      internalID: -7956320873774079955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_42
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 533
+        width: 118
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ad46e24db1a62800800000000000000
+      internalID: 587334635661708710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_43
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 533
+        width: 133
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8c4332b3e9d1090800000000000000
+      internalID: -8062113781092398928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_44
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 533
+        width: 132
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f347450b1c6b4dc0800000000000000
+      internalID: -3653707809372552204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_45
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 533
+        width: 125
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 049fdb032707e70e0800000000000000
+      internalID: -2270253526401812160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_46
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 533
+        width: 117
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ddd0a2613c5937c0800000000000000
+      internalID: -4091137419311522344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_47
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 533
+        width: 134
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57067d1df761a9020800000000000000
+      internalID: 2349214893864345717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_48
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 277
+        width: 123
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c83c0afd914e429f0800000000000000
+      internalID: -494019259326741620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_49
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 277
+        width: 129
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed963df184d12c90800000000000000
+      internalID: -7196237074797257233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_50
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 277
+        width: 105
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87d0bae1a3a29c20800000000000000
+      internalID: 3211809400091105166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_51
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 277
+        width: 136
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d1e9f00ae132810800000000000000
+      internalID: 1739267553900764571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_52
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 277
+        width: 142
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64289a86cd2280040800000000000000
+      internalID: 4613976148285162054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_53
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 277
+        width: 115
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b89a885f45d1470800000000000000
+      internalID: 8366937096260782920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_54
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 277
+        width: 133
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db043936e311d98a0800000000000000
+      internalID: -6296857744337846083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_55
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 277
+        width: 112
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfbf538d661bf33d0800000000000000
+      internalID: -3224663752901788676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_56
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 21
+        width: 120
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1452470ef8e273b50800000000000000
+      internalID: 6572773376651437377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_57
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 21
+        width: 121
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffba92cd3922ec1f0800000000000000
+      internalID: -1022842046917268481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_58
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 21
+        width: 105
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ffb2368a5dde320800000000000000
+      internalID: 2588960280002953038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_59
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 21
+        width: 117
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b326733ee6e539690800000000000000
+      internalID: -7596624316092423621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_60
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 21
+        width: 121
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0348e0c7948a2f470800000000000000
+      internalID: 8426982886331024432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_61
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 21
+        width: 112
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37729c13bf60d7510800000000000000
+      internalID: 1548401522827143027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_62
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 21
+        width: 105
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ccfd7ce36ba74b0800000000000000
+      internalID: -5441836818966262732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_atlas_8x8_63
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 21
+        width: 120
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64ac8f4cefcfe8770800000000000000
+      internalID: 8615101308362869318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      walk_atlas_8x8_0: -1656953567923705697
+      walk_atlas_8x8_1: 578305321892749188
+      walk_atlas_8x8_10: 6553678008475466655
+      walk_atlas_8x8_11: -6878742938490903621
+      walk_atlas_8x8_12: 3976175328018539834
+      walk_atlas_8x8_13: 1679304538984601970
+      walk_atlas_8x8_14: -1178413569498442343
+      walk_atlas_8x8_15: -275388379171354711
+      walk_atlas_8x8_16: 4826447936449053083
+      walk_atlas_8x8_17: 3829590448473684460
+      walk_atlas_8x8_18: -4168011606455370944
+      walk_atlas_8x8_19: 5578302411981038989
+      walk_atlas_8x8_2: 5696584662861287367
+      walk_atlas_8x8_20: 3102747022739353465
+      walk_atlas_8x8_21: 5058431007498944599
+      walk_atlas_8x8_22: 1014600514887923469
+      walk_atlas_8x8_23: 2179812153101167375
+      walk_atlas_8x8_24: 3628033297290267695
+      walk_atlas_8x8_25: 344762897576296890
+      walk_atlas_8x8_26: 1202106641088606129
+      walk_atlas_8x8_27: 4352264048741133480
+      walk_atlas_8x8_28: 1928629017530563216
+      walk_atlas_8x8_29: 6290947428414982906
+      walk_atlas_8x8_3: -3287577348751007227
+      walk_atlas_8x8_30: -318321757834684922
+      walk_atlas_8x8_31: -6749416022000785293
+      walk_atlas_8x8_32: 8358719268544108804
+      walk_atlas_8x8_33: -8998281223132875208
+      walk_atlas_8x8_34: 1518238307952647832
+      walk_atlas_8x8_35: -7152203103809976137
+      walk_atlas_8x8_36: 5922521687398010176
+      walk_atlas_8x8_37: 3348031311253227207
+      walk_atlas_8x8_38: 2931497223646020082
+      walk_atlas_8x8_39: -3107812767725026411
+      walk_atlas_8x8_4: 7241993066543027214
+      walk_atlas_8x8_40: 792977558340952218
+      walk_atlas_8x8_41: -7956320873774079955
+      walk_atlas_8x8_42: 587334635661708710
+      walk_atlas_8x8_43: -8062113781092398928
+      walk_atlas_8x8_44: -3653707809372552204
+      walk_atlas_8x8_45: -2270253526401812160
+      walk_atlas_8x8_46: -4091137419311522344
+      walk_atlas_8x8_47: 2349214893864345717
+      walk_atlas_8x8_48: -494019259326741620
+      walk_atlas_8x8_49: -7196237074797257233
+      walk_atlas_8x8_5: 2781489684799705473
+      walk_atlas_8x8_50: 3211809400091105166
+      walk_atlas_8x8_51: 1739267553900764571
+      walk_atlas_8x8_52: 4613976148285162054
+      walk_atlas_8x8_53: 8366937096260782920
+      walk_atlas_8x8_54: -6296857744337846083
+      walk_atlas_8x8_55: -3224663752901788676
+      walk_atlas_8x8_56: 6572773376651437377
+      walk_atlas_8x8_57: -1022842046917268481
+      walk_atlas_8x8_58: 2588960280002953038
+      walk_atlas_8x8_59: -7596624316092423621
+      walk_atlas_8x8_6: 4240185635863427646
+      walk_atlas_8x8_60: 8426982886331024432
+      walk_atlas_8x8_61: 1548401522827143027
+      walk_atlas_8x8_62: -5441836818966262732
+      walk_atlas_8x8_63: 8615101308362869318
+      walk_atlas_8x8_7: 6290029024877731278
+      walk_atlas_8x8_8: 6103758022800836567
+      walk_atlas_8x8_9: -1695199845651017562
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
