@@ -15,7 +15,7 @@ namespace ParadiseTycoon.Hud.Editor
         static readonly Color Ink = new Color(.055f, .12f, .23f);
         static readonly Color Paper = new Color(.14f, .29f, .44f, .98f);
         static readonly Color Teal = new Color(.18f, .60f, .88f);
-        static Font Font => Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        static TMPro.TMP_FontAsset Font => AssetDatabase.LoadAssetAtPath<TMPro.TMP_FontAsset>("Assets/Hud/Fonts/ResortHud SDF.asset");
 
         [MenuItem("Tools/Paradise Tycoon/HUD/Create prefab and integration demo")]
         public static void Build()
@@ -69,11 +69,26 @@ namespace ParadiseTycoon.Hud.Editor
         [MenuItem("Tools/Paradise Tycoon/HUD/Integrate prefab into active scene")]
         public static void Integrate()
         {
-            if (UnityEngine.Object.FindAnyObjectByType<ResortHud>(FindObjectsInactive.Include) != null) return;
-            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(PrefabPath);
-            if (prefab == null) throw new InvalidOperationException("Build the HUD prefab first.");
-            var ui = GameObject.Find("UI");
-            Undo.RegisterCreatedObjectUndo(PrefabUtility.InstantiatePrefab(prefab, ui != null ? ui.transform : null), "Integrate resort HUD");
+            if (UnityEngine.Object.FindAnyObjectByType<ResortHud>(FindObjectsInactive.Include) == null)
+            {
+                var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(PrefabPath);
+                if (prefab == null) throw new InvalidOperationException("Build the HUD prefab first.");
+                var ui = GameObject.Find("UI");
+                Undo.RegisterCreatedObjectUndo(PrefabUtility.InstantiatePrefab(prefab, ui != null ? ui.transform : null), "Integrate resort HUD");
+            }
+            // Hide the menu's old shortcut in the authored scene too, so Edit-mode previews
+            // show the same single pause control as Play mode. Keep the menu prefab untouched.
+            var menu = UnityEngine.Object.FindAnyObjectByType<ParadiseTycoon.Scrum104.PauseMenuController>();
+            if (menu != null && menu.PauseButton != null)
+            {
+                Undo.RecordObject(menu.PauseButton.gameObject,"Use HUD pause shortcut");
+                var visibility = menu.PauseButton.GetComponent<HudLegacyPauseShortcut>();
+                if (visibility == null) visibility = Undo.AddComponent<HudLegacyPauseShortcut>(menu.PauseButton.gameObject);
+                visibility.Bind(UnityEngine.Object.FindAnyObjectByType<ResortHud>(FindObjectsInactive.Include));
+                EditorUtility.SetDirty(visibility);
+                menu.PauseButton.gameObject.SetActive(false);
+                PrefabUtility.RecordPrefabInstancePropertyModifications(menu.PauseButton.gameObject);
+            }
             EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
         }
 
@@ -87,7 +102,10 @@ namespace ParadiseTycoon.Hud.Editor
         static void Box(RectTransform rect, Vector2 anchor, Vector2 pivot, Vector2 pos, Vector2 size)
         { rect.anchorMin = rect.anchorMax = anchor; rect.pivot = pivot; rect.anchoredPosition = pos; rect.sizeDelta = size; }
         static HudPanel Panel(RectTransform rect, Color top, Color bottom, float radius)
-        { var panel = rect.gameObject.AddComponent<HudPanel>(); panel.Style(top,bottom,radius); panel.raycastTarget=false; return panel; }
+        {
+            if (rect.GetComponent<CanvasRenderer>() == null) rect.gameObject.AddComponent<CanvasRenderer>();
+            var panel = rect.gameObject.AddComponent<HudPanel>(); panel.Style(top,bottom,radius); panel.raycastTarget=false; return panel;
+        }
         static HudPanel Surface(RectTransform rect, Color top, Color bottom)
         {
             var shadow = Rect("Shadow",rect); Stretch(shadow); shadow.anchoredPosition = new Vector2(0,-6);
@@ -96,22 +114,23 @@ namespace ParadiseTycoon.Hud.Editor
             var inner = Rect("Face",rect); Stretch(inner); inner.offsetMin=Vector2.one*4; inner.offsetMax=-Vector2.one*4;
             return Panel(inner,top,bottom,16);
         }
-        static Text Label(Transform parent, string name, string content, Vector2 pos, Vector2 size, int fontSize, Color color)
+        static TMPro.TMP_Text Label(Transform parent, string name, string content, Vector2 pos, Vector2 size, int fontSize, Color color)
         {
             var rect = Rect(name, parent); Box(rect, new Vector2(0, 1), new Vector2(0, 1), pos, size);
-            var text = rect.gameObject.AddComponent<Text>(); text.font = Font; text.text = content;
-            text.fontSize = fontSize; text.color = color; text.alignment = TextAnchor.MiddleLeft;
-            text.fontStyle = FontStyle.Bold;
-            var outline = rect.gameObject.AddComponent<Outline>(); outline.effectColor = new Color(.015f,.055f,.12f,.7f); outline.effectDistance = new Vector2(1,-1);
+            var text = rect.gameObject.AddComponent<TMPro.TextMeshProUGUI>(); text.font = Font; text.text = content;
+            text.fontSize = fontSize; text.color = color; text.alignment = TMPro.TextAlignmentOptions.MidlineLeft;
+            text.fontStyle = TMPro.FontStyles.Bold;
+            text.enableAutoSizing = false; text.textWrappingMode = TMPro.TextWrappingModes.NoWrap;
             text.raycastTarget = false; return text;
         }
-        static Text Stat(Transform parent, string name, string title, string value, float x, Color accent, HudIcon.Shape shape)
+        static TMPro.TMP_Text Stat(Transform parent, string name, string title, string value, float x, Color accent, HudIcon.Shape shape)
         {
             var card = Rect(name, parent); Box(card, new Vector2(0, 1), new Vector2(0, 1), new Vector2(x, 0), new Vector2(254, 88));
             Surface(card, Paper, new Color(.08f,.17f,.30f));
             var disk = Rect("IconDisk",card); Box(disk,new Vector2(0,1),new Vector2(0,1),new Vector2(12,-13),new Vector2(62,62));
             Panel(disk,Ink,Ink,31);
             var icon = Rect("Icon",disk); Stretch(icon); icon.offsetMin=Vector2.one*7; icon.offsetMax=-Vector2.one*7;
+            icon.gameObject.AddComponent<CanvasRenderer>();
             var graphic = icon.gameObject.AddComponent<HudIcon>(); graphic.SetShape(shape); graphic.color=accent; graphic.raycastTarget=false;
             Label(card, "Title", title, new Vector2(84, -10), new Vector2(162, 24), 13, accent);
             return Label(card, "Value", value, new Vector2(84, -34), new Vector2(162, 42), 30, Color.white);
@@ -124,8 +143,9 @@ namespace ParadiseTycoon.Hud.Editor
             Panel(shine,new Color(1,1,1,.35f),new Color(1,1,1,.35f),2);
             var button = rect.gameObject.AddComponent<Button>(); button.targetGraphic = face;
             var navigation = button.navigation; navigation.mode = Navigation.Mode.None; button.navigation = navigation;
-            var text = Label(rect, "Label", title, Vector2.zero, size, 26, Color.white); text.alignment = TextAnchor.MiddleCenter;
+            var text = Label(rect, "Label", title, Vector2.zero, size, 26, Color.white); text.alignment = TMPro.TextAlignmentOptions.Center;
             return button;
         }
     }
 }
+

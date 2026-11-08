@@ -4,6 +4,7 @@ using UnityEngine.UI;
 namespace ParadiseTycoon.Hud
 {
     /// <summary>Resolution-independent rounded panel with a subtle vertical gradient.</summary>
+    [RequireComponent(typeof(CanvasRenderer))]
     public sealed class HudPanel : MaskableGraphic
     {
         [SerializeField] float radius = 18;
@@ -32,3 +33,4 @@ namespace ParadiseTycoon.Hud
         }
     }
 }
+
