@@ -1735,6 +1735,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 2559438921449129528, guid: ba782657de7b27e5da195e4f5187fcee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4561087765490089404, guid: ba782657de7b27e5da195e4f5187fcee, type: 3}
       propertyPath: m_OverrideSorting
       value: 1
@@ -1838,13 +1842,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2559438921449129528, guid: ba782657de7b27e5da195e4f5187fcee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1586373184}
+    - targetCorrespondingSourceObject: {fileID: 2559438921449129528, guid: ba782657de7b27e5da195e4f5187fcee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1586373183}
   m_SourcePrefab: {fileID: 100100000, guid: ba782657de7b27e5da195e4f5187fcee, type: 3}
 --- !u!224 &1586373181 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7027702579101278066, guid: ba782657de7b27e5da195e4f5187fcee, type: 3}
   m_PrefabInstance: {fileID: 1586373180}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1586373182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2559438921449129528, guid: ba782657de7b27e5da195e4f5187fcee, type: 3}
+  m_PrefabInstance: {fileID: 1586373180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1586373183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586373182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90bfa9d198c4de448e02460b4b5ad29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParadiseTycoon.Hud.HudLegacyPauseShortcut
+  owner: {fileID: 2039077607}
+  captured: 1
+  originalAlpha: 1
+  originalInteractable: 1
+  originalBlocksRaycasts: 1
+--- !u!225 &1586373184
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586373182}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1616628367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2273,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1680249672120627410, guid: dec222cae64bb84448ac57a998e78a97, type: 3}
   m_PrefabInstance: {fileID: 2039077605}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2039077607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3361222944948282048, guid: dec222cae64bb84448ac57a998e78a97, type: 3}
+  m_PrefabInstance: {fileID: 2039077605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 545e2c51574505842bb8270b84e5ba93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParadiseTycoon.Hud.ResortHud
 --- !u!1 &2091691496
 GameObject:
   m_ObjectHideFlags: 0

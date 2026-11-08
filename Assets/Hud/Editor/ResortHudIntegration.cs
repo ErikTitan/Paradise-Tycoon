@@ -98,6 +98,11 @@ namespace ParadiseTycoon.Hud.Editor
             Require(PrefabUtility.IsPartOfPrefabInstance(huds[0]), "HUD must remain linked to its standalone prefab.");
             Require(UnityEngine.Object.FindObjectsByType<EventSystem>(FindObjectsSortMode.None).Length == 1, "Exactly one EventSystem is required.");
             Require(UnityEngine.Object.FindObjectsByType<PauseMenuController>(FindObjectsSortMode.None).Length == 1, "Exactly one pause menu is required.");
+            Require(!UnityEngine.Object.FindAnyObjectByType<PauseMenuController>().PauseButton.gameObject.activeSelf,
+                "The legacy pause shortcut must be hidden in the saved scene to avoid overlapping the HUD.");
+            var legacy = UnityEngine.Object.FindAnyObjectByType<PauseMenuController>().PauseButton;
+            Require(legacy.GetComponent<HudLegacyPauseShortcut>() != null && legacy.GetComponent<CanvasGroup>() != null,
+                "Legacy pause visibility must remain managed across resolution changes and editor previews.");
             var canvas = huds[0].GetComponent<Canvas>();
             Require(canvas != null && canvas.renderMode == RenderMode.ScreenSpaceOverlay && canvas.sortingOrder == 20, "HUD Canvas configuration is invalid.");
             Require(huds[0].GetComponent<UnityEngine.UI.GraphicRaycaster>() != null, "HUD raycaster is required.");

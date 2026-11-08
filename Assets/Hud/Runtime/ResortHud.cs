@@ -8,16 +8,14 @@ namespace ParadiseTycoon.Hud
     /// <summary>Demo HUD. Values are presentation data, not an economy implementation.</summary>
     public sealed class ResortHud : MonoBehaviour
     {
-        [SerializeField] Text coinsLabel, energyLabel, resortLabel, statusLabel;
+        [SerializeField] TMPro.TMP_Text coinsLabel, energyLabel, resortLabel, statusLabel;
         [SerializeField] Button pauseButton, buildButton, upgradeButton;
         [SerializeField, Min(0)] int demoCoins = 1250;
         [SerializeField, Min(0)] int demoEnergy = 80;
         [SerializeField, Min(1)] int demoMaxEnergy = 100;
         [SerializeField, Min(0)] int demoResortValue = 24500;
         PauseMenuController menu;
-        CanvasGroup legacyPause;
-        float oldAlpha;
-        bool oldInteractable, oldBlocks;
+        HudLegacyPauseShortcut legacyPause;
         public Button PauseButton => pauseButton;
         public Button BuildButton => buildButton;
         public Button UpgradeButton => upgradeButton;
@@ -51,13 +49,9 @@ namespace ParadiseTycoon.Hud
                 menu = PauseMenuController.Instance;
                 if (menu != null)
                 {
-                    legacyPause = menu.PauseButton.GetComponent<CanvasGroup>();
-                    if (legacyPause == null) legacyPause = menu.PauseButton.gameObject.AddComponent<CanvasGroup>();
-                    oldAlpha = legacyPause.alpha;
-                    oldInteractable = legacyPause.interactable;
-                    oldBlocks = legacyPause.blocksRaycasts;
-                    legacyPause.alpha = 0;
-                    legacyPause.interactable = legacyPause.blocksRaycasts = false;
+                    legacyPause = menu.PauseButton.GetComponent<HudLegacyPauseShortcut>();
+                    if (legacyPause == null) legacyPause = menu.PauseButton.gameObject.AddComponent<HudLegacyPauseShortcut>();
+                    legacyPause.Bind(this);
                 }
             }
             // A standalone HUD remains usable, but cannot pause without the menu prefab.
@@ -76,9 +70,7 @@ namespace ParadiseTycoon.Hud
         {
             if (legacyPause != null)
             {
-                legacyPause.alpha = oldAlpha;
-                legacyPause.interactable = oldInteractable;
-                legacyPause.blocksRaycasts = oldBlocks;
+                legacyPause.Release(this);
             }
             legacyPause = null;
         }
@@ -92,3 +84,4 @@ namespace ParadiseTycoon.Hud
         }
     }
 }
+

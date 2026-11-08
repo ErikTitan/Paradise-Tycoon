@@ -4,6 +4,7 @@ using UnityEngine.UI;
 namespace ParadiseTycoon.Hud
 {
     /// <summary>Small original geometric icons; no external art or font glyph dependency.</summary>
+    [RequireComponent(typeof(CanvasRenderer))]
     public sealed class HudIcon : MaskableGraphic
     {
         public enum Shape { Coin, Energy, Resort }
