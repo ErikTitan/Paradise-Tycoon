@@ -18,19 +18,26 @@ Each teammate edits their own prefab instead of Main.unity.
 | `UI/MainCanvas/SafeArea/HUD_IntegrationSlot` | HUD content / Erik |
 | `UI/MainCanvas/SafeArea/PauseMenu` | Connected SCRUM-104 prefab / Henrieta |
 
-**Current layout:** the expanded `island_base_large_v2.png` terrain is installed in
-`World/Environment/IslandEnvironment` at 28 world units wide. The large front beach
-and the sheltered harbor bay on the right remain free for separate props and docks.
-`World/Buildings/ResortBuildings_L1` contains all six building types at level 1:
-hotel, restaurant, beach bar, bungalow, pool and spa. These are editable scene
-objects using the existing building art and ground-point SortingGroups.
-`World/Decorations/CoastalPalms` contains the two coastal palm examples.
+**Current layout:** `World/Environment/IslandEnvironment` is linked to the
+delivered island prefab, including the coast, walking paths, dock and decorations.
+Main uses its camera-sized `OceanBackdrop` and disables the prefab's fixed ocean
+on the scene instance.
 
-Henrieta's merged pause menu stays connected as a prefab instance. The HUD slot is
-intentionally empty. Teammates' final environment/building/HUD prefabs have not yet
-been integrated. When they arrive, replace the corresponding layout group under
-its container and check the result. Keep the camera and EventSystem in Systems;
-do not import cameras, AudioListeners or EventSystems from demo scenes.
+`World/Buildings/ResortBuildings_L1` is a layout prefab containing six linked
+building prefabs: hotel, restaurant, beach bar, bungalow, pool and spa.
+Find the individual prefabs and the layout in `Assets/Buildings/Prefabs`.
+
+The starting layout shows Hotel (Reception), Restaurant and BeachBar completed.
+Pool and Bungalow show prepared construction sites, as required for the initial map.
+Spa also starts as a construction site because it is a later VIP unlock.
+Each completed L1 prefab retains its `Visual` child. The starting layout selects
+the `Construction` child for the three future buildings through prefab overrides.
+
+The building roots match the named anchors under the island's
+`BuildingEntrances`. Adjust the relevant layout and path together if an entrance moves.
+
+Erik's HUD and Henrieta's pause menu stay linked to their source prefabs.
+Keep the camera and EventSystem in Systems when integrating a module.
 
 ## Shared 2D rules
 
@@ -64,8 +71,8 @@ The shared overlay Canvas uses a 1280 × 720 reference and Scale With Screen Siz
 match = 0.5. Put HUD content inside the SafeArea container. If a delivered prefab
 already has a Canvas, keep it nested, stretch its root and disable its duplicate
 CanvasScaler on the instance. PauseMenu uses this setup with sorting order 100.
-Its source prefab is unchanged. A future HUD pause button can call
-`PauseMenuController.OpenPauseMenu()`; the prefab's current Pause button already works.
+The HUD Pause button opens Henrieta's menu. The original pause shortcut is hidden
+on the Main scene instance to avoid a duplicate button.
 
 ## Verification and remaining acceptance
 
@@ -78,10 +85,8 @@ Play-mode checks performed: advancing frames, opening pause, Time.timeScale = 0,
 resume restoring time, music reference, UI pointer input and landscape captures.
 No gameplay/economy simulation or optional camera controls are included.
 
-SCRUM-105/106/107 have their technical implementation prepared. SCRUM-108 still
-needs the delivered environment, building and HUD prefabs, followed by another
-team member opening and testing the complete scene. The parent task must not be
-considered fully accepted before that handoff.
+The island, buildings, HUD and pause menu are connected in Main. Acceptance for
+SCRUM-108 still includes another team member opening and testing the complete scene.
 
 The creation menu refuses to overwrite an existing Main.unity. Use it only in a
 checkout without that scene; integrate future modules into the existing scene.
