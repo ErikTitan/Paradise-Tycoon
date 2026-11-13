@@ -8,6 +8,8 @@ namespace ParadiseTycoon.Scrum104
     public sealed class PauseMenuController : MonoBehaviour
     {
         public const string VolumeKey = "ParadiseTycoon.Audio.MasterVolume";
+        public const string MusicVolumeKey = "ParadiseTycoon.Audio.MusicVolume";
+        public const string EffectsVolumeKey = "ParadiseTycoon.Audio.EffectsVolume";
         public static PauseMenuController Instance { get; private set; }
         [SerializeField] GameObject panel;
         [SerializeField] Button pauseButton;
@@ -17,13 +19,18 @@ namespace ParadiseTycoon.Scrum104
         [SerializeField] AudioSource musicSource;
         [SerializeField] AudioSource uiSource;
         [SerializeField] AudioClip clickClip;
+        Slider effectsVolumeSlider;
+        Text effectsVolumeLabel;
         float previousTimeScale = 1f;
         GameObject previousSelection;
         public bool IsPaused { get; private set; }
         public float Volume { get; private set; }
+        public float MusicVolume => Volume;
+        public float EffectsVolume { get; private set; }
         public AudioSource MusicSource => musicSource;
         public AudioSource UiSource => uiSource;
         public Slider VolumeSlider => volumeSlider;
+        public Slider EffectsVolumeSlider => effectsVolumeSlider;
         public Button PauseButton => pauseButton;
         public Button ResumeButton => resumeButton;
 
@@ -44,8 +51,13 @@ namespace ParadiseTycoon.Scrum104
             uiSource.playOnAwake = false;
             pauseButton.onClick.AddListener(OpenPauseMenu);
             resumeButton.onClick.AddListener(Resume);
-            volumeSlider.onValueChanged.AddListener(SetVolume);
+            CreateEffectsControl();
+            volumeSlider.onValueChanged.AddListener(SetMusicVolume);
+            effectsVolumeSlider.onValueChanged.AddListener(SetEffectsVolume);
             ReloadVolume();
+            PlayerPrefs.SetFloat(MusicVolumeKey, MusicVolume);
+            PlayerPrefs.SetFloat(EffectsVolumeKey, EffectsVolume);
+            PlayerPrefs.Save();
             if (musicSource.clip != null && !musicSource.isPlaying) musicSource.Play();
         }
 
@@ -73,22 +85,90 @@ namespace ParadiseTycoon.Scrum104
                 EventSystem.current.SetSelectedGameObject(previousSelection != null ? previousSelection : pauseButton.gameObject);
         }
 
+        void CreateEffectsControl()
+        {
+            var parent = volumeSlider.transform.parent;
+            effectsVolumeSlider = Instantiate(volumeSlider, parent, false);
+            effectsVolumeSlider.name = "EffectsVolumeSlider";
+            effectsVolumeSlider.onValueChanged = new Slider.SliderEvent();
+            effectsVolumeLabel = Instantiate(volumeLabel, volumeLabel.transform.parent, false);
+            effectsVolumeLabel.name = "EffectsVolumeLabel";
+
+            var sliderRect = (RectTransform)volumeSlider.transform;
+            var effectsRect = (RectTransform)effectsVolumeSlider.transform;
+            var labelRect = volumeLabel.rectTransform;
+            var effectsLabelRect = effectsVolumeLabel.rectTransform;
+            sliderRect.anchoredPosition += Vector2.up * 60f;
+            labelRect.anchoredPosition += Vector2.up * 72f;
+            effectsRect.anchoredPosition = sliderRect.anchoredPosition + Vector2.down * 130f;
+            effectsLabelRect.anchoredPosition = labelRect.anchoredPosition + Vector2.down * 130f;
+
+            foreach (var slider in new[] { volumeSlider, effectsVolumeSlider })
+            {
+                var handle = slider.handleRect;
+                handle.sizeDelta = new Vector2(handle.sizeDelta.x, 8f);
+            }
+
+            var card = parent as RectTransform;
+            if (card != null) card.sizeDelta += Vector2.up * 120f;
+            var title = parent.Find("Title") as RectTransform;
+            if (title != null) title.anchoredPosition += Vector2.up * 60f;
+            var hint = parent.Find("Hint") as RectTransform;
+            if (hint != null) hint.anchoredPosition += Vector2.down * 75f;
+            ((RectTransform)resumeButton.transform).anchoredPosition += Vector2.down * 60f;
+        }
+
         public void SetVolume(float value)
         {
-            ApplyVolume(value);
+            ApplyMusicVolume(value);
+            ApplyEffectsVolume(value);
             PlayerPrefs.SetFloat(VolumeKey, Volume);
+            PlayerPrefs.SetFloat(MusicVolumeKey, MusicVolume);
+            PlayerPrefs.SetFloat(EffectsVolumeKey, EffectsVolume);
             PlayerPrefs.Save();
         }
 
-        public void ReloadVolume() => ApplyVolume(PlayerPrefs.GetFloat(VolumeKey, 0.7f));
-
-        void ApplyVolume(float value)
+        public void SetMusicVolume(float value)
         {
-            Volume = float.IsNaN(value) || float.IsInfinity(value) ? 0.7f : Mathf.Clamp01(value);
-            musicSource.volume = Volume;
-            uiSource.volume = Volume;
-            volumeSlider.SetValueWithoutNotify(Volume);
-            volumeLabel.text = Volume == 0 ? "Hlasitosť: stlmené" : "Hlasitosť: " + Mathf.RoundToInt(Volume * 100) + " %";
+            ApplyMusicVolume(value);
+            PlayerPrefs.SetFloat(MusicVolumeKey, MusicVolume);
+            PlayerPrefs.Save();
+        }
+
+        public void SetEffectsVolume(float value)
+        {
+            ApplyEffectsVolume(value);
+            PlayerPrefs.SetFloat(EffectsVolumeKey, EffectsVolume);
+            PlayerPrefs.Save();
+        }
+
+        public void ReloadVolume()
+        {
+            float previousVolume = PlayerPrefs.GetFloat(VolumeKey, 0.7f);
+            ApplyMusicVolume(PlayerPrefs.GetFloat(MusicVolumeKey, previousVolume));
+            ApplyEffectsVolume(PlayerPrefs.GetFloat(EffectsVolumeKey, previousVolume));
+        }
+
+        static float ClampVolume(float value) =>
+            float.IsNaN(value) || float.IsInfinity(value) ? 0.7f : Mathf.Clamp01(value);
+
+        static string VolumeText(string channel, float value) =>
+            channel + (value == 0 ? ": stlmené" : ": " + Mathf.RoundToInt(value * 100) + " %");
+
+        void ApplyMusicVolume(float value)
+        {
+            Volume = ClampVolume(value);
+            musicSource.volume = MusicVolume;
+            volumeSlider.SetValueWithoutNotify(MusicVolume);
+            volumeLabel.text = VolumeText("Hudba", MusicVolume);
+        }
+
+        void ApplyEffectsVolume(float value)
+        {
+            EffectsVolume = ClampVolume(value);
+            uiSource.volume = EffectsVolume;
+            effectsVolumeSlider.SetValueWithoutNotify(EffectsVolume);
+            effectsVolumeLabel.text = VolumeText("Zvukové efekty", EffectsVolume);
         }
 
         // Other UI buttons can use this event; sources survive closing the panel.
