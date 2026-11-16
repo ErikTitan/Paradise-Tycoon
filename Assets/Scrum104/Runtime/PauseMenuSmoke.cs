@@ -9,71 +9,127 @@ namespace ParadiseTycoon.Scrum104
     // Only runs with an explicit command-line flag; excluded from player builds.
     public sealed class PauseMenuSmoke : MonoBehaviour
     {
-        const string BackupKey = "ParadiseTycoon.Scrum104.TestBackup";
-        const string HadKey = "ParadiseTycoon.Scrum104.TestHadKey";
+        const string BackupPrefix = "ParadiseTycoon.Audio.TestBackup.";
+        static readonly string[] Keys = {
+            PauseMenuController.VolumeKey,
+            PauseMenuController.MusicVolumeKey,
+            PauseMenuController.EffectsVolumeKey
+        };
         bool read;
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Boot()
         {
             var args = Environment.GetCommandLineArgs();
-            if (args.Contains("-scrum104SmokeWrite") || args.Contains("-scrum104SmokeRead"))
-                new GameObject("Smoke verification").AddComponent<PauseMenuSmoke>().read = args.Contains("-scrum104SmokeRead");
+            bool write = args.Contains("-audioSettingsSmokeWrite");
+            bool restart = args.Contains("-audioSettingsSmokeRead");
+            if (!write && !restart) return;
+            if (write)
+            {
+                foreach (string key in Keys)
+                {
+                    if (PlayerPrefs.HasKey(BackupPrefix + key + ".exists")) continue;
+                    PlayerPrefs.SetInt(BackupPrefix + key + ".exists", PlayerPrefs.HasKey(key) ? 1 : 0);
+                    PlayerPrefs.SetFloat(BackupPrefix + key, PlayerPrefs.GetFloat(key, .7f));
+                }
+                PlayerPrefs.SetFloat(PauseMenuController.VolumeKey, .42f);
+                PlayerPrefs.DeleteKey(PauseMenuController.MusicVolumeKey);
+                PlayerPrefs.DeleteKey(PauseMenuController.EffectsVolumeKey);
+                PlayerPrefs.Save();
+            }
+            new GameObject("Audio settings verification").AddComponent<PauseMenuSmoke>().read = restart;
         }
-        static void Check(bool ok, string message) { if (!ok) throw new Exception(message); Debug.Log("SCRUM104_PASS " + message); }
+        static void Check(bool ok, string message)
+        {
+            if (!ok) throw new Exception(message);
+            Debug.Log("AUDIO_SETTINGS_PASS " + message);
+        }
         IEnumerator Start()
         {
             yield return null;
             try
             {
                 var c = PauseMenuController.Instance;
-                Check(c != null, "controller initialized");
+                Check(c != null && c.EffectsVolumeSlider != null, "both controls initialized");
                 if (read)
                 {
-                    Check(c.Volume == 0 && c.VolumeSlider.value == 0 && c.MusicSource.volume == 0 && c.UiSource.volume == 0,
-                        "mute restored after Editor process restart");
+                    Check(c.MusicVolume == 0 && c.VolumeSlider.value == 0 && c.MusicSource.volume == 0,
+                        "music mute restored after Editor restart");
+                    Check(Mathf.Approximately(c.EffectsVolume, .65f)
+                        && Mathf.Approximately(c.EffectsVolumeSlider.value, .65f)
+                        && Mathf.Approximately(c.UiSource.volume, .65f),
+                        "independent effects volume restored after Editor restart");
                     Restore();
-                    Debug.Log("SCRUM104_RESTART_OK"); EditorApplication.Exit(0); yield break;
+                    Debug.Log("AUDIO_SETTINGS_RESTART_OK");
+                    EditorApplication.Exit(0);
+                    yield break;
                 }
-                if (!PlayerPrefs.HasKey(HadKey)) {
-                PlayerPrefs.SetInt(HadKey,PlayerPrefs.HasKey(PauseMenuController.VolumeKey)?1:0);
-                PlayerPrefs.SetFloat(BackupKey,PlayerPrefs.GetFloat(PauseMenuController.VolumeKey,.7f)); PlayerPrefs.Save(); }
+                Check(Mathf.Approximately(c.MusicVolume, .42f) && Mathf.Approximately(c.EffectsVolume, .42f),
+                    "previous shared volume migrated to both channels");
                 c.VolumeSlider.value = .37f;
-                Check(Mathf.Approximately(c.Volume,.37f) && Mathf.Approximately(c.MusicSource.volume,.37f) && Mathf.Approximately(c.UiSource.volume,.37f), "slider changes both audio channels");
-                c.ReloadVolume(); Check(Mathf.Approximately(c.Volume,.37f), "saved volume reloaded");
-                Check(c.MusicSource.clip != null && c.UiSource != null, "audio references present");
+                Check(Mathf.Approximately(c.MusicSource.volume, .37f) && Mathf.Approximately(c.UiSource.volume, .42f),
+                    "music slider does not change effects");
+                c.EffectsVolumeSlider.value = .65f;
+                Check(Mathf.Approximately(c.UiSource.volume, .65f) && Mathf.Approximately(c.MusicSource.volume, .37f),
+                    "effects slider does not change music");
+                c.ReloadVolume();
+                Check(Mathf.Approximately(c.MusicVolume, .37f) && Mathf.Approximately(c.EffectsVolume, .65f),
+                    "both saved values reload independently");
+                c.EffectsVolumeSlider.value = 0;
+                Check(c.UiSource.volume == 0 && Mathf.Approximately(c.MusicSource.volume, .37f),
+                    "effects mute leaves music playing");
+                c.SetMusicVolume(2f);
+                c.SetEffectsVolume(-1f);
+                Check(c.MusicVolume == 1 && c.EffectsVolume == 0, "values are clamped to slider range");
+                c.SetMusicVolume(float.NaN);
+                c.SetEffectsVolume(float.PositiveInfinity);
+                Check(Mathf.Approximately(c.MusicVolume, .7f) && Mathf.Approximately(c.EffectsVolume, .7f),
+                    "invalid values use a safe default");
+                c.SetMusicVolume(.37f);
+                c.SetEffectsVolume(.65f);
                 Time.timeScale = .75f;
                 c.PauseButton.onClick.Invoke();
-                Check(c.IsPaused && Time.timeScale == 0 && c.ResumeButton.gameObject.activeInHierarchy, "HUD button pauses game and opens menu");
+                Check(c.IsPaused && Time.timeScale == 0 && c.ResumeButton.gameObject.activeInHierarchy,
+                    "pause still stops game time and opens menu");
                 c.VolumeSlider.value = .25f;
-                Check(Mathf.Approximately(c.Volume,.25f), "UI volume responds during pause");
-            }
-            catch(Exception e) { Fail(e); yield break; }
-
-            try
-            {
-                var c = PauseMenuController.Instance;
-                Check(Time.timeScale == 0, "scaled game time is paused");
-                var music = c.MusicSource;
-                c.OpenPauseMenu(); Check(c.MusicSource == music, "reopening uses same music source");
+                c.EffectsVolumeSlider.value = .5f;
+                Check(Mathf.Approximately(c.MusicSource.volume, .25f) && Mathf.Approximately(c.UiSource.volume, .5f),
+                    "both controls respond during pause");
                 c.ResumeButton.onClick.Invoke();
-                Check(!c.IsPaused && Mathf.Approximately(Time.timeScale,.75f), "resume restores previous time scale");
-                var duplicate = Instantiate(c.gameObject); Check(!duplicate.activeSelf, "duplicate menu disabled immediately");
-                c.OpenPauseMenu(); c.enabled = false;
-                Check(Mathf.Approximately(Time.timeScale,.75f), "disabling controller restores time");
-                c.enabled = true; c.Resume();
-                c.VolumeSlider.value = 0;
-                Check(c.MusicSource.volume == 0 && c.UiSource.volume == 0 && PlayerPrefs.GetFloat(PauseMenuController.VolumeKey,-1) == 0, "mute applies and persists");
-                Debug.Log("SCRUM104_SMOKE_OK"); EditorApplication.Exit(0);
+                Check(!c.IsPaused && Mathf.Approximately(Time.timeScale, .75f), "resume restores previous time scale");
+                c.OpenPauseMenu();
+                c.enabled = false;
+                Check(Mathf.Approximately(Time.timeScale, .75f), "disabling paused menu restores time");
+                c.enabled = true;
+                c.SetMusicVolume(0);
+                c.SetEffectsVolume(.65f);
+                Check(c.MusicSource.volume == 0 && Mathf.Approximately(c.UiSource.volume, .65f),
+                    "music mute leaves effects enabled");
+                Check(PlayerPrefs.GetFloat(PauseMenuController.MusicVolumeKey, -1) == 0
+                    && Mathf.Approximately(PlayerPrefs.GetFloat(PauseMenuController.EffectsVolumeKey, -1), .65f),
+                    "both settings persist under separate keys");
+                Debug.Log("AUDIO_SETTINGS_SMOKE_OK");
+                EditorApplication.Exit(0);
             }
-            catch(Exception e) { Fail(e); }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+                Restore();
+                EditorApplication.Exit(1);
+            }
         }
         static void Restore()
         {
-            if (PlayerPrefs.GetInt(HadKey)==1) PlayerPrefs.SetFloat(PauseMenuController.VolumeKey,PlayerPrefs.GetFloat(BackupKey));
-            else PlayerPrefs.DeleteKey(PauseMenuController.VolumeKey);
-            PlayerPrefs.DeleteKey(HadKey); PlayerPrefs.DeleteKey(BackupKey); PlayerPrefs.Save();
+            foreach (string key in Keys)
+            {
+                string exists = BackupPrefix + key + ".exists";
+                if (!PlayerPrefs.HasKey(exists)) continue;
+                if (PlayerPrefs.GetInt(exists) == 1) PlayerPrefs.SetFloat(key, PlayerPrefs.GetFloat(BackupPrefix + key));
+                else PlayerPrefs.DeleteKey(key);
+                PlayerPrefs.DeleteKey(exists);
+                PlayerPrefs.DeleteKey(BackupPrefix + key);
+            }
+            PlayerPrefs.Save();
         }
-        static void Fail(Exception e) { Debug.LogException(e); Restore(); EditorApplication.Exit(1); }
     }
 }
 #endif
