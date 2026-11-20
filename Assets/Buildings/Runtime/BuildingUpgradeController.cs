@@ -102,7 +102,11 @@ namespace ParadiseTycoon.Buildings
                     hit = building;
             }
 
-            if (hit != null) Open(hit);
+            if (hit != null)
+            {
+                PauseMenuController.Instance?.PlayClick();
+                Open(hit);
+            }
         }
 
         bool IsOverUi(Vector2 screenPoint)
@@ -143,7 +147,6 @@ namespace ParadiseTycoon.Buildings
             selected = building;
             confirming = false;
             feedback = "";
-            PauseMenuController.Instance?.PlayClick();
             panel.Show(selected, state.Coins, state.IsWaveActive, false, feedback);
         }
 
