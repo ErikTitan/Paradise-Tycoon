@@ -103,6 +103,7 @@ namespace ParadiseTycoon.Ship.Editor
             so.FindProperty("panel").objectReferenceValue = panel;
             so.FindProperty("ship").objectReferenceValue = ship;
             so.FindProperty("hud").objectReferenceValue = hud;
+            so.FindProperty("upgrades").objectReferenceValue = serviceObject.FindProperty("upgrades").objectReferenceValue;
             so.FindProperty("arrivalClip").objectReferenceValue = Clip("prichod_lode");
             so.FindProperty("rejectClip").objectReferenceValue = Clip("odmietnutie_lode");
             so.FindProperty("completedClip").objectReferenceValue = Clip("dokoncenie_vlny");

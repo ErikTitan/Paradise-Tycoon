@@ -22,6 +22,7 @@ namespace ParadiseTycoon.Ship
         [SerializeField] ShipOfferPanel panel;
         [SerializeField] ShipVisual ship;
         [SerializeField] ResortHud hud;
+        [SerializeField] BuildingUpgradeController upgrades;
         [SerializeField] AudioClip arrivalClip, rejectClip, completedClip;
         [Tooltip("0 = different offers every session.")]
         [SerializeField] int seed;
@@ -31,8 +32,23 @@ namespace ParadiseTycoon.Ship
 
         ShipOfferGenerator generator;
 
-        public ShipWaveState State { get; private set; }
+        ShipWaveState state;
+        public ShipWaveState State
+        {
+            get => state;
+            private set
+            {
+                if (state == value) return;
+                state = value;
+                StateChanged?.Invoke(value);
+            }
+        }
+        /// <summary>True from accepting a ship until its guests are served (upgrades and UI can rely on this).</summary>
+        public bool IsWaveActive => State is ShipWaveState.Arriving or ShipWaveState.Docked or ShipWaveState.Running;
+        public event Action<ShipWaveState> StateChanged;
         public ShipOffer CurrentOffer { get; private set; }
+        /// <summary>Number of the wave on offer; increases only when a wave actually starts.</summary>
+        public int WaveNumber { get; private set; } = 1;
         /// <summary>Raised with the accepted offer and the per-request results (e.g. for rewards).</summary>
         public event Action<ShipOffer, IReadOnlyList<GuestRequestResult>> WaveFinished;
         public event Action<ShipOffer> OfferChanged;
@@ -41,6 +57,7 @@ namespace ParadiseTycoon.Ship
         internal ShipVisual Ship => ship;
         internal GuestServiceController GuestService => guestService;
         internal ResortHud Hud => hud;
+        internal BuildingUpgradeController Upgrades => upgrades;
         internal IReadOnlyList<ResortBuilding> Buildings => buildings;
         internal IReadOnlyCollection<string> AvailableServiceIds => AvailableServices();
 
@@ -69,6 +86,8 @@ namespace ParadiseTycoon.Ship
         {
             if (State != ShipWaveState.Offered || CurrentOffer == null || IsPaused() || guestService.IsRunning) return false;
             State = ShipWaveState.Arriving;
+            // The wave counts as active from the moment the ship is accepted (upgrades wait until it is over).
+            if (upgrades != null) upgrades.SetWaveActive(true);
             panel.Hide();
             Play(arrivalClip);
             Status("Loď sa blíži k prístavu.");
@@ -90,11 +109,13 @@ namespace ParadiseTycoon.Ship
             if (guestService.TryStartWave(CurrentOffer.WaveId, CurrentOffer.CreatePassengers()))
             {
                 State = ShipWaveState.Running;
+                WaveNumber++;
                 Status("Hostia vystupujú na ostrov.");
                 return;
             }
             // The offer can no longer be served (should not happen, buildings never lose levels).
             Debug.LogWarning($"Ship wave {CurrentOffer.WaveId} could not start; sending the ship away.");
+            if (upgrades != null) upgrades.SetWaveActive(false);
             Leave();
         }
 
@@ -116,7 +137,7 @@ namespace ParadiseTycoon.Ship
 
         void NextOffer()
         {
-            CurrentOffer = generator.Next(AvailableServices());
+            CurrentOffer = generator.Next(AvailableServices(), WaveNumber);
             if (CurrentOffer == null)
             {
                 State = ShipWaveState.WaitingForServices;

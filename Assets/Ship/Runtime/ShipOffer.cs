@@ -56,7 +56,6 @@ namespace ParadiseTycoon.Ship
     {
         readonly Random random;
         readonly int minGuests, maxGuests, maxRequestsPerGuest;
-        int waveNumber;
 
         public ShipOfferGenerator(int seed, int minGuests, int maxGuests, int maxRequestsPerGuest)
         {
@@ -66,13 +65,16 @@ namespace ParadiseTycoon.Ship
             this.maxRequestsPerGuest = Math.Max(1, maxRequestsPerGuest);
         }
 
-        /// <summary>Returns null when no service is available yet.</summary>
-        public ShipOffer Next(IReadOnlyCollection<string> availableServiceIds)
+        /// <summary>
+        /// Returns null when no service is available yet. The wave number is only consumed when a wave
+        /// really starts, so rejected offers do not advance the player's progress.
+        /// </summary>
+        public ShipOffer Next(IReadOnlyCollection<string> availableServiceIds, int waveNumber)
         {
             var services = availableServiceIds?.Where(id => !string.IsNullOrEmpty(id)).Distinct(StringComparer.Ordinal).ToArray();
             if (services == null || services.Length == 0) return null;
 
-            string waveId = $"wave-{++waveNumber:000}";
+            string waveId = $"wave-{Math.Max(1, waveNumber):000}";
             int guestCount = random.Next(minGuests, maxGuests + 1);
             var guestIds = new List<string>(guestCount);
             var guestRequests = new List<IReadOnlyList<string>>(guestCount);
