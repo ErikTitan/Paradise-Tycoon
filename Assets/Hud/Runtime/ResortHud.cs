@@ -1,4 +1,6 @@
 using System.Globalization;
+using ParadiseTycoon.Buildings;
+using ParadiseTycoon.GameState;
 using ParadiseTycoon.Scrum104;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +18,7 @@ namespace ParadiseTycoon.Hud
         [SerializeField, Min(0)] int demoResortValue = 24500;
         PauseMenuController menu;
         HudLegacyPauseShortcut legacyPause;
+        IBuildingUpgradeState state;
         public event System.Action UpgradeRequested;
         public Button PauseButton => pauseButton;
         public Button BuildButton => buildButton;
@@ -30,15 +33,31 @@ namespace ParadiseTycoon.Hud
             pauseButton.onClick.AddListener(OpenPause);
             buildButton.onClick.AddListener(PreviewBuild);
             upgradeButton.onClick.AddListener(PreviewUpgrade);
-            RefreshDemoValues();
+            if (state != null) state.Changed += RefreshValues;
+            RefreshValues();
+            statusLabel.text = "Vitaj vo svojom rezorte!";
         }
 
-        public void RefreshDemoValues()
+        public void BindState(IBuildingUpgradeState sharedState)
         {
-            SetCoins(demoCoins);
-            energyLabel.text = Mathf.Clamp(demoEnergy, 0, Mathf.Max(1, demoMaxEnergy)) + " / " + Mathf.Max(1, demoMaxEnergy);
-            resortLabel.text = Mathf.Max(0, demoResortValue).ToString("N0", CultureInfo.GetCultureInfo("sk-SK"));
-            statusLabel.text = "Vitaj vo svojom rezorte!";
+            if (state != null) state.Changed -= RefreshValues;
+            state = sharedState;
+            if (!isActiveAndEnabled) return;
+            if (state != null) state.Changed += RefreshValues;
+            RefreshValues();
+        }
+
+        public void RefreshDemoValues() => RefreshValues();
+
+        void RefreshValues()
+        {
+            var resort = state as ResortGameState;
+            SetCoins(state?.Coins ?? demoCoins);
+            int maximum = resort?.MaxEnergy ?? Mathf.Max(1, demoMaxEnergy);
+            int energy = resort?.Energy ?? Mathf.Clamp(demoEnergy, 0, maximum);
+            energyLabel.text = energy + " / " + maximum;
+            long value = resort?.ResortValue ?? Mathf.Max(0, demoResortValue);
+            resortLabel.text = value.ToString("N0", CultureInfo.GetCultureInfo("sk-SK"));
         }
 
         void LateUpdate()
@@ -88,6 +107,7 @@ namespace ParadiseTycoon.Hud
         }
         void OnDisable()
         {
+            if (state != null) state.Changed -= RefreshValues;
             pauseButton.onClick.RemoveListener(OpenPause);
             buildButton.onClick.RemoveListener(PreviewBuild);
             upgradeButton.onClick.RemoveListener(PreviewUpgrade);
