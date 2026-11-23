@@ -170,9 +170,11 @@ namespace ParadiseTycoon.GameState
 
         public bool TryBeginWave(string waveId)
         {
-            if (unreadableSave || IsWaveActive || string.IsNullOrWhiteSpace(waveId) || HasCompletedWave(waveId))
+            if (unreadableSave || ActiveWaveId != null || string.IsNullOrWhiteSpace(waveId) || HasCompletedWave(waveId))
                 return false;
+            // At docking, the guest wave takes over the ship's arrival lock until settlement.
             ActiveWaveId = waveId;
+            externalWaveActive = false;
             Changed?.Invoke();
             return true;
         }
