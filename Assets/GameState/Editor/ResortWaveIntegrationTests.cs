@@ -24,6 +24,7 @@ namespace ParadiseTycoon.GameState.Editor
             Scene scene = default;
             ResortBuilding[] buildings = null;
             ResortGameState state = null;
+            BuildingUpgradeController upgrades = null;
             GuestServiceController guests = null;
             ResortHud hud = null;
             void BindBeforeStart(Scene loadedScene, LoadSceneMode mode)
@@ -35,7 +36,8 @@ namespace ParadiseTycoon.GameState.Editor
                     roots.SelectMany(root => root.GetComponentsInChildren<T>(true)).Single();
                 buildings = roots.SelectMany(root => root.GetComponentsInChildren<ResortBuilding>(true)).ToArray();
                 state = new ResortGameState(directory, buildings, 10000, new ResortEconomySettings());
-                Find<BuildingUpgradeController>().BindState(state);
+                upgrades = Find<BuildingUpgradeController>();
+                upgrades.BindState(state);
                 guests = Find<GuestServiceController>();
                 hud = Find<ResortHud>();
             }
@@ -48,7 +50,12 @@ namespace ParadiseTycoon.GameState.Editor
                 var passengers = new[] { new AcceptedGuest { guestId = "guest", serviceIds = new[] { "hotel" } } };
                 int completions = 0;
                 guests.WaveCompleted += (id, results) => completions++;
+                // Accepting the ship locks upgrades before its passengers reach the dock.
+                upgrades.SetWaveActive(true);
+                Assert.That(state.TryPurchaseUpgrade("hotel", 1, 450), Is.False);
                 Assert.That(guests.TryStartWave("boat-test", passengers), Is.True);
+                Assert.That(state.ActiveWaveId, Is.EqualTo("boat-test"));
+                Assert.That(state.TryBeginWave("other-boat"), Is.False);
                 Assert.That(state.IsWaveActive, Is.True);
                 Assert.That(state.TryPurchaseUpgrade("hotel", 1, 450), Is.False);
                 // Drive the same simulation as Update without waiting for the full visit in real time.
