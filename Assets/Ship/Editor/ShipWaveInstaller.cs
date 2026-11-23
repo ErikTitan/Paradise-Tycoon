@@ -18,10 +18,13 @@ namespace ParadiseTycoon.Ship.Editor
         static readonly Color Paper = new Color(.14f, .29f, .44f, .98f);
         static TMP_FontAsset Font => AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Hud/Fonts/ResortHud SDF.asset");
 
-        // Dock artwork sits at (9.6, 1.65) in IslandEnvironment; the boat moors on its sea side.
-        static readonly Vector3 DockPosition = new Vector3(10.9f, .35f, 0);
-        static readonly Vector3 SeaPosition = new Vector3(17.5f, -2.2f, 0);
-        const float BoatWidth = 2.6f;
+        // The dock sits in the east-facing cove at (9.6, 1.65); the pier ends at x 11.4.
+        // The boat enters the cove straight from the east and moors just past the pier end.
+        // Checked against the island artwork (see ShipRouteTests): a 1.8-unit boat stays on water along
+        // the whole line in both directions, and the sea point is outside the camera view even on 20:9.
+        static readonly Vector3 DockPosition = new Vector3(13f, 2.3f, 0);
+        static readonly Vector3 SeaPosition = new Vector3(24f, 2.3f, 0);
+        const float BoatWidth = 1.8f;
 
         [MenuItem("Tools/Paradise Tycoon/Ship/Install ship wave into active scene")]
         public static void Install()

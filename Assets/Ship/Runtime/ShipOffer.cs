@@ -65,6 +65,9 @@ namespace ParadiseTycoon.Ship
             this.maxRequestsPerGuest = Math.Max(1, maxRequestsPerGuest);
         }
 
+        /// <summary>The stable ID of a wave number, e.g. wave-003. Saved progress refers to waves by this ID.</summary>
+        public static string WaveId(int waveNumber) => $"wave-{Math.Max(1, waveNumber):000}";
+
         /// <summary>
         /// Returns null when no service is available yet. The wave number is only consumed when a wave
         /// really starts, so rejected offers do not advance the player's progress.
@@ -74,7 +77,7 @@ namespace ParadiseTycoon.Ship
             var services = availableServiceIds?.Where(id => !string.IsNullOrEmpty(id)).Distinct(StringComparer.Ordinal).ToArray();
             if (services == null || services.Length == 0) return null;
 
-            string waveId = $"wave-{Math.Max(1, waveNumber):000}";
+            string waveId = WaveId(waveNumber);
             int guestCount = random.Next(minGuests, maxGuests + 1);
             var guestIds = new List<string>(guestCount);
             var guestRequests = new List<IReadOnlyList<string>>(guestCount);

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ParadiseTycoon.Buildings;
+using ParadiseTycoon.GameState;
 using ParadiseTycoon.Guests;
 using ParadiseTycoon.Hud;
 using ParadiseTycoon.Scrum104;
@@ -47,7 +48,10 @@ namespace ParadiseTycoon.Ship
         public bool IsWaveActive => State is ShipWaveState.Arriving or ShipWaveState.Docked or ShipWaveState.Running;
         public event Action<ShipWaveState> StateChanged;
         public ShipOffer CurrentOffer { get; private set; }
-        /// <summary>Number of the wave on offer; increases only when a wave actually starts.</summary>
+        /// <summary>
+        /// Number of the wave on offer. It continues from the saved progress and increases only when a wave
+        /// actually starts, so rejected offers and restarts never reuse a completed wave ID.
+        /// </summary>
         public int WaveNumber { get; private set; } = 1;
         /// <summary>Raised with the accepted offer and the per-request results (e.g. for rewards).</summary>
         public event Action<ShipOffer, IReadOnlyList<GuestRequestResult>> WaveFinished;
@@ -137,6 +141,7 @@ namespace ParadiseTycoon.Ship
 
         void NextOffer()
         {
+            WaveNumber = FirstUnusedWaveNumber(WaveNumber);
             CurrentOffer = generator.Next(AvailableServices(), WaveNumber);
             if (CurrentOffer == null)
             {
@@ -149,6 +154,19 @@ namespace ParadiseTycoon.Ship
                 panel.Show(CurrentOffer, DisplayName);
             }
             OfferChanged?.Invoke(CurrentOffer);
+        }
+
+        ResortGameState SavedProgress => upgrades != null ? upgrades.GameState : null;
+
+        // After a restart the controller starts at 1, but the shared state remembers completed waves
+        // and refuses to begin one of them again, so skip every saved wave ID.
+        int FirstUnusedWaveNumber(int from)
+        {
+            var saved = SavedProgress;
+            if (saved == null) return Math.Max(1, from);
+            int number = Math.Max(from, saved.CompletedWaves + 1);
+            while (saved.HasCompletedWave(ShipOfferGenerator.WaveId(number))) number++;
+            return number;
         }
 
         List<string> AvailableServices() =>
