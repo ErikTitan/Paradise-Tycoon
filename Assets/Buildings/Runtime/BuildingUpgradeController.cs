@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.IO;
+using ParadiseTycoon.GameState;
 using ParadiseTycoon.Hud;
 using ParadiseTycoon.Scrum104;
 using UnityEngine;
@@ -17,10 +17,10 @@ namespace ParadiseTycoon.Buildings
         [SerializeField] BuildingUpgradePanel panel;
         [SerializeField] ResortHud hud;
         [SerializeField, Min(0)] int startingCoins = 10000;
+        [SerializeField] ResortEconomySettings economy = new();
 
         readonly List<RaycastResult> uiHits = new();
         IBuildingUpgradeState state;
-        LocalBuildingUpgradeState localState;
         ResortBuilding selected;
         ButtonControl worldPress;
         int quotedLevel;
@@ -28,23 +28,32 @@ namespace ParadiseTycoon.Buildings
         bool started;
         string feedback = "";
 
+        // The same instance is used by purchases, the HUD, and the guest/ship systems.
+        public ResortGameState GameState
+        {
+            get
+            {
+                EnsureState();
+                return state as ResortGameState;
+            }
+        }
+
+        void EnsureState()
+        {
+            if (state == null)
+                BindState(new ResortGameState(Application.persistentDataPath, buildings, startingCoins, economy));
+        }
+
         void Start()
         {
-            started = true;
             panel.Bind(ConfirmOrPurchase, Close);
             panel.gameObject.SetActive(false);
             hud.UpgradeRequested += ShowFromHud;
-            if (state == null)
-            {
-                localState = new LocalBuildingUpgradeState(
-                    Path.Combine(Application.persistentDataPath, "building-upgrades-v1.json"),
-                    startingCoins, buildings);
-                BindState(localState);
-            }
-            else
-            {
-                Refresh();
-            }
+            EnsureState();
+            started = true;
+            Refresh();
+            if (state is ResortGameState resort && resort.SaveError != null)
+                hud.SetStatus("Postup sa nepodarilo načítať alebo uložiť. Skontroluj úložisko.");
         }
 
         public void BindState(IBuildingUpgradeState sharedState)
@@ -53,11 +62,12 @@ namespace ParadiseTycoon.Buildings
             if (state != null) state.Changed -= Refresh;
             state = sharedState;
             state.Changed += Refresh;
+            hud.BindState(sharedState);
             confirming = false;
             Refresh();
         }
 
-        public void SetWaveActive(bool active) => localState?.SetWaveActive(active);
+        public void SetWaveActive(bool active) => GameState?.SetExternalWaveActive(active);
 
         void OnDestroy()
         {
@@ -167,7 +177,6 @@ namespace ParadiseTycoon.Buildings
                 building.ApplyLevel(Mathf.Clamp(level, 0, building.MaxLevel));
             }
 
-            hud.SetCoins(state.Coins);
             if (selected == null || !panel.gameObject.activeSelf) return;
             if (selected.Level != quotedLevel || state.IsWaveActive) confirming = false;
             panel.Show(selected, state.Coins, state.IsWaveActive, confirming, feedback);

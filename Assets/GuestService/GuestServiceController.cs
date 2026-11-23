@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ParadiseTycoon.Buildings;
+using ParadiseTycoon.GameState;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -75,21 +76,28 @@ namespace ParadiseTycoon.Guests
         [SerializeField] GameObject progressPanel;
         [SerializeField, Min(.1f)] float walkSpeed = 3.2f;
         [SerializeField, Min(1)] int overloadThreshold = 2;
+        [SerializeField, Min(0)] int coinsPerCompletedRequest = 100;
         readonly List<Guest> guests = new();
         readonly HashSet<string> acceptedWaveIds = new(StringComparer.Ordinal);
         IslandGuestPaths paths;
+        ResortGameState waveState;
+        IReadOnlyList<GuestRequestResult> finalRequests;
+        int? pendingReward;
+        double nextSettlementAttempt;
 
         public bool IsRunning { get; private set; }
         public string WaveId { get; private set; }
         // Optional multiplier supplied by shared game state (e.g. manager bonus).
         public Func<string, float> ServiceSpeedMultiplier { get; set; }
+        // A rewards system can supply the rated payout before the wave is settled.
+        public Func<string, IReadOnlyList<GuestRequestResult>, int> CalculateWaveReward { get; set; }
         public event Action<string, IReadOnlyList<GuestRequestResult>> WaveCompleted;
 
         /// <summary>Starts service for the exact passengers and ordered requests from an accepted offer.</summary>
         public bool TryStartWave(string waveId, IReadOnlyList<AcceptedGuest> passengers)
         {
             if (IsRunning || !isActiveAndEnabled || Time.timeScale <= 0 || string.IsNullOrWhiteSpace(waveId) ||
-                acceptedWaveIds.Contains(waveId) || passengers == null || passengers.Count == 0) return false;
+                passengers == null || passengers.Count == 0) return false;
             var lookup = stations.ToDictionary(s => s.building.BuildingId, StringComparer.Ordinal);
             var ids = new HashSet<string>(StringComparer.Ordinal);
             var incoming = new List<Guest>(passengers.Count);
@@ -113,6 +121,10 @@ namespace ParadiseTycoon.Guests
                 station.approach ??= paths.Route(station.entrance.position, harbor.position);
                 station.total = station.completed = 0;
             }
+            var sharedState = upgrades != null ? upgrades.GameState : null;
+            if (sharedState != null ? !sharedState.TryBeginWave(waveId) : !acceptedWaveIds.Add(waveId))
+                return false;
+            waveState = sharedState;
             guests.Clear();
             guests.AddRange(incoming);
             int departureSlot = 0;
@@ -126,9 +138,7 @@ namespace ParadiseTycoon.Guests
                 Send(guest, harbor.position);
             }
             WaveId = waveId;
-            acceptedWaveIds.Add(waveId);
             IsRunning = true;
-            if (upgrades != null) upgrades.SetWaveActive(true);
             progressPanel.SetActive(true);
             Refresh();
             return true;
@@ -142,6 +152,11 @@ namespace ParadiseTycoon.Guests
         internal void Advance(float seconds)
         {
             if (!IsRunning || seconds <= 0 || Time.timeScale <= 0) return;
+            if (finalRequests != null)
+            {
+                if (Time.realtimeSinceStartupAsDouble >= nextSettlementAttempt) SettleWave();
+                return;
+            }
             foreach (var station in stations)
             {
                 foreach (var guest in station.waiting) guest.requests[guest.index].wait += seconds;
@@ -192,12 +207,37 @@ namespace ParadiseTycoon.Guests
 
             Refresh();
             if (!guests.All(g => g.returned)) return;
+            finalRequests = CaptureRequests();
+            SettleWave();
+        }
+
+        void SettleWave()
+        {
+            if (waveState != null)
+            {
+                if (!pendingReward.HasValue)
+                {
+                    long reward = CalculateWaveReward != null ? CalculateWaveReward(WaveId, finalRequests)
+                        : (long)finalRequests.Count(request => request.State == GuestRequestState.Completed) * coinsPerCompletedRequest;
+                    if (reward >= 0 && reward <= int.MaxValue - waveState.Coins)
+                        pendingReward = (int)reward;
+                }
+                if (!pendingReward.HasValue || !waveState.TryCompleteWave(WaveId, pendingReward.Value))
+                {
+                    // Keep the wave and its results available until the entire checkpoint can be written.
+                    nextSettlementAttempt = Time.realtimeSinceStartupAsDouble + 2;
+                    return;
+                }
+            }
+            var results = finalRequests;
+            finalRequests = null;
+            pendingReward = null;
+            waveState = null;
             foreach (var guest in guests)
                 if (guest.sprite != null) Destroy(guest.sprite.transform.parent.gameObject);
             IsRunning = false;
             progressPanel.SetActive(false);
-            if (upgrades != null) upgrades.SetWaveActive(false);
-            WaveCompleted?.Invoke(WaveId, CaptureRequests());
+            WaveCompleted?.Invoke(WaveId, results);
         }
 
         void Admit(Station station, int capacity)

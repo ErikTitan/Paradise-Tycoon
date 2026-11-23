@@ -35,7 +35,8 @@ namespace ParadiseTycoon.Buildings
 
         public string BuildingId => buildingId;
         public string DisplayName => displayName;
-        public int InitialLevel { get; private set; }
+        int? initialLevel;
+        public int InitialLevel => initialLevel ?? (visual.gameObject.activeSelf ? 1 : 0);
         public int MaxLevel => levels.Length;
         public int Level { get; private set; }
         public BuildingLevel CurrentService => GetLevel(Level);
@@ -47,7 +48,7 @@ namespace ParadiseTycoon.Buildings
             originalScale = visual.transform.localScale;
             originalPosition = visual.transform.localPosition;
             originalBounds = visual.sprite.bounds;
-            InitialLevel = visual.gameObject.activeSelf ? 1 : 0;
+            initialLevel = InitialLevel;
             ApplyLevel(InitialLevel);
         }
 
