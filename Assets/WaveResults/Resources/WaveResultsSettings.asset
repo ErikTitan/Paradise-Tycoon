@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71aff86b31b24217bf44bd9748d1f6f3, type: 3}
+  m_Name: WaveResultsSettings
+  m_EditorClassIdentifier:
+  rating:
+    FullSatisfactionWaitSeconds: 5
+    ZeroSatisfactionWaitSeconds: 60
+    StarThresholds:
+    - 0.2
+    - 0.4
+    - 0.6
+    - 0.8
+    CoinsPerCompletedRequest: 5
+    StarRewardMultipliers:
+    - 0.5
+    - 0.75
+    - 1
+    - 1.25
+    - 1.5
+  successfulWave: {fileID: 8300000, guid: d9a58f7b06434e4e4833a0e5b10b1397, type: 3}

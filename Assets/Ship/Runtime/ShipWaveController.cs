@@ -56,6 +56,19 @@ namespace ParadiseTycoon.Ship
         /// <summary>Raised with the accepted offer and the per-request results (e.g. for rewards).</summary>
         public event Action<ShipOffer, IReadOnlyList<GuestRequestResult>> WaveFinished;
         public event Action<ShipOffer> OfferChanged;
+        public Func<string, IReadOnlyList<GuestRequestResult>, AudioClip> CompletionSound { get; set; }
+        public bool AwaitingResultAcknowledgement { get; private set; }
+        bool deferredOffer;
+
+        public void SetResultPending(bool pending)
+        {
+            AwaitingResultAcknowledgement = pending;
+            if (!pending && deferredOffer)
+            {
+                deferredOffer = false;
+                NextOffer();
+            }
+        }
 
         internal ShipOfferPanel Panel => panel;
         internal ShipVisual Ship => ship;
@@ -88,7 +101,7 @@ namespace ParadiseTycoon.Ship
 
         public bool Accept()
         {
-            if (State != ShipWaveState.Offered || CurrentOffer == null || IsPaused() || guestService.IsRunning) return false;
+            if (AwaitingResultAcknowledgement || State != ShipWaveState.Offered || CurrentOffer == null || IsPaused() || guestService.IsRunning) return false;
             State = ShipWaveState.Arriving;
             // The wave counts as active from the moment the ship is accepted (upgrades wait until it is over).
             if (upgrades != null) upgrades.SetWaveActive(true);
@@ -101,7 +114,7 @@ namespace ParadiseTycoon.Ship
 
         public bool Reject()
         {
-            if (State != ShipWaveState.Offered || IsPaused()) return false;
+            if (AwaitingResultAcknowledgement || State != ShipWaveState.Offered || IsPaused()) return false;
             Play(rejectClip);
             NextOffer();
             Status("Loď odmietnutá.");
@@ -127,7 +140,7 @@ namespace ParadiseTycoon.Ship
         {
             if (State != ShipWaveState.Running || CurrentOffer == null || waveId != CurrentOffer.WaveId) return;
             var finished = CurrentOffer;
-            Play(completedClip);
+            Play(CompletionSound?.Invoke(waveId, results) ?? completedClip);
             Status("Vlna dokončená!");
             Leave();
             WaveFinished?.Invoke(finished, results);
@@ -141,6 +154,12 @@ namespace ParadiseTycoon.Ship
 
         void NextOffer()
         {
+            if (AwaitingResultAcknowledgement)
+            {
+                deferredOffer = true;
+                panel.Hide();
+                return;
+            }
             WaveNumber = FirstUnusedWaveNumber(WaveNumber);
             CurrentOffer = generator.Next(AvailableServices(), WaveNumber);
             if (CurrentOffer == null)
