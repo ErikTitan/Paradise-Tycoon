@@ -6,6 +6,7 @@ using NUnit.Framework;
 using ParadiseTycoon.Buildings;
 using ParadiseTycoon.Guests;
 using ParadiseTycoon.Hud;
+using ParadiseTycoon.WaveResults;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -62,15 +63,18 @@ namespace ParadiseTycoon.GameState.Editor
                 for (int step = 0; step < 300 && guests.IsRunning; step++)
                     guests.SendMessage("Advance", 1f);
                 Assert.That(completions, Is.EqualTo(1));
-                Assert.That(state.Coins, Is.EqualTo(10100));
+                var rating = Resources.Load<WaveResultsSettings>("WaveResultsSettings").rating;
+                int expectedCoins = 10000 + WaveRatingCalculator.Evaluate(
+                    GuestWaveSummaryAdapter.Create("boat-test", guests.CaptureRequests()), rating).Coins;
+                Assert.That(state.Coins, Is.EqualTo(expectedCoins));
                 Assert.That(guests.TryStartWave("boat-test", passengers), Is.False);
                 Assert.That(state.TryPurchaseUpgrade("hotel", 1, 450), Is.True);
                 Assert.That(buildings.Single(b => b.BuildingId == "hotel").Level, Is.EqualTo(2));
                 hud.gameObject.SetActive(false);
                 hud.gameObject.SetActive(true);
-                Assert.That(hud.CoinsText, Is.EqualTo(9650.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("sk-SK"))));
+                Assert.That(hud.CoinsText, Is.EqualTo((expectedCoins - 450).ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("sk-SK"))));
                 var loaded = new ResortGameState(directory, buildings, 10000, new ResortEconomySettings());
-                Assert.That(loaded.Coins, Is.EqualTo(9650));
+                Assert.That(loaded.Coins, Is.EqualTo(expectedCoins - 450));
                 Assert.That(loaded.CompletedWaves, Is.EqualTo(1));
             }
             finally
