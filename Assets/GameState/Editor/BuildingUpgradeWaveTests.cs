@@ -8,6 +8,7 @@ using ParadiseTycoon.Buildings;
 using ParadiseTycoon.Guests;
 using ParadiseTycoon.Hud;
 using ParadiseTycoon.Ship;
+using ParadiseTycoon.WaveResults;
 using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -124,6 +125,15 @@ namespace ParadiseTycoon.GameState.Editor
                     Assert.That(state.IsWaveActive, Is.False);
                     Assert.That(state.Coins, Is.GreaterThan(before));
                     Assert.That(hud.CoinsText, Is.EqualTo(state.Coins.ToString("N0", culture)));
+
+                    var resultsPanel = UnityEngine.Object.FindObjectsByType<WaveResultsPanel>()
+                        .Single(results => results.IsVisible);
+                    var returnToIsland = resultsPanel.GetComponentsInChildren<Button>()
+                        .Single(button => button.name == "ReturnToIsland");
+                    Assert.That(ships.Accept(), Is.False, "The results panel must block the next ship.");
+                    returnToIsland.OnPointerClick(pointer);
+                    Assert.That(resultsPanel.IsVisible, Is.False);
+                    Assert.That(ships.State, Is.EqualTo(ShipWaveState.Offered));
 
                     if (wave != 0) continue;
                     int earned = state.Coins;
